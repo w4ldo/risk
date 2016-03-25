@@ -1,7 +1,7 @@
 # risk
 Risk-lautapeli javalla toteutettuna.
 ### Dokumentaatio
-- [aiheen kuvaus](dokumentointi/aihemäärittely.md)
+- [aiheen kuvaus](dokumentointi/aihemaarittely.md)
 - [tuntikirjanpito](dokumentointi/tuntikirjanpito.md)
 - [rakennekuvaus]
 - [testausdokumentaatio]
