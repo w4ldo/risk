@@ -7,5 +7,5 @@
 - liikuttaa joukkoja alueesta toiseen (valtaus & passiivinen liike)
 - hallita alueita ja maanosia (lisäjoukkojen saaminen)
 
-**Voitaminen**
+**Voittaminen**
 - Peli jatkuu kunnes yksi pelaajista hallitsee koko lautaa
