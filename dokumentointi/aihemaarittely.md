@@ -9,3 +9,7 @@
 
 **Voittaminen**
 - Peli jatkuu kunnes yksi pelaajista hallitsee koko lautaa
+
+**Luokkakaavio**
+
+![jtn jtn](http://yuml.me/b93f5b5c)
