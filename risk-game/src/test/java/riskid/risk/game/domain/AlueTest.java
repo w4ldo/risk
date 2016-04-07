@@ -71,6 +71,13 @@ public class AlueTest {
         alue.setHallitsija(pelaaja);
         assertEquals(pelaaja, alue.getHallitsija());
     }
+    
+    @Test
+    public void getYksikkoPalauttaaYksikon() {
+        Yksikko unit = new Yksikko(new Pelaaja("ossi"));
+        alue.setYksikko(unit);
+        assertEquals(unit, alue.getYksikko());
+    }
 
 //    @Test
 //    public void hello() {

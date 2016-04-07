@@ -86,23 +86,23 @@ public class Mapbuilder {
         lista.get(24).setViereiset(lista.get(22), lista.get(23), lista.get(25));
         lista.get(25).setViereiset(lista.get(23), lista.get(24));
 
-        lista.get(26).setViereiset(lista.get(15),lista.get(27),lista.get(31),lista.get(32));
-        lista.get(27).setViereiset(lista.get(26),lista.get(28),lista.get(30),lista.get(32),lista.get(33));
-        lista.get(28).setViereiset(lista.get(27),lista.get(30),lista.get(29));
-        lista.get(29).setViereiset(lista.get(28),lista.get(30),lista.get(33),lista.get(34),lista.get(0));
-        lista.get(30).setViereiset(lista.get(27),lista.get(28),lista.get(29),lista.get(33));
-        lista.get(31).setViereiset(lista.get(15),lista.get(26),lista.get(32),lista.get(35),lista.get(36));
-        lista.get(32).setViereiset(lista.get(26),lista.get(27),lista.get(31),lista.get(33),lista.get(36),lista.get(37));
-        lista.get(33).setViereiset(lista.get(27),lista.get(29),lista.get(30),lista.get(32),lista.get(34));
-        lista.get(34).setViereiset(lista.get(33),lista.get(29));
-        lista.get(35).setViereiset(lista.get(15),lista.get(19),lista.get(21),lista.get(23),lista.get(31),lista.get(36));
-        lista.get(36).setViereiset(lista.get(31),lista.get(32),lista.get(35),lista.get(37));
-        lista.get(37).setViereiset(lista.get(32),lista.get(36),lista.get(38));
+        lista.get(26).setViereiset(lista.get(15), lista.get(27), lista.get(31), lista.get(32));
+        lista.get(27).setViereiset(lista.get(26), lista.get(28), lista.get(30), lista.get(32), lista.get(33));
+        lista.get(28).setViereiset(lista.get(27), lista.get(30), lista.get(29));
+        lista.get(29).setViereiset(lista.get(28), lista.get(30), lista.get(33), lista.get(34), lista.get(0));
+        lista.get(30).setViereiset(lista.get(27), lista.get(28), lista.get(29), lista.get(33));
+        lista.get(31).setViereiset(lista.get(15), lista.get(26), lista.get(32), lista.get(35), lista.get(36));
+        lista.get(32).setViereiset(lista.get(26), lista.get(27), lista.get(31), lista.get(33), lista.get(36), lista.get(37));
+        lista.get(33).setViereiset(lista.get(27), lista.get(29), lista.get(30), lista.get(32), lista.get(34));
+        lista.get(34).setViereiset(lista.get(33), lista.get(29));
+        lista.get(35).setViereiset(lista.get(15), lista.get(19), lista.get(21), lista.get(23), lista.get(31), lista.get(36));
+        lista.get(36).setViereiset(lista.get(31), lista.get(32), lista.get(35), lista.get(37));
+        lista.get(37).setViereiset(lista.get(32), lista.get(36), lista.get(38));
 
-        lista.get(38).setViereiset(lista.get(37),lista.get(39),lista.get(40));
-        lista.get(39).setViereiset(lista.get(38),lista.get(40),lista.get(41));
-        lista.get(40).setViereiset(lista.get(38),lista.get(39),lista.get(41));
-        lista.get(41).setViereiset(lista.get(40),lista.get(39));
+        lista.get(38).setViereiset(lista.get(37), lista.get(39), lista.get(40));
+        lista.get(39).setViereiset(lista.get(38), lista.get(40), lista.get(41));
+        lista.get(40).setViereiset(lista.get(38), lista.get(39), lista.get(41));
+        lista.get(41).setViereiset(lista.get(40), lista.get(39));
     }
 
 }

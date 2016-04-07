@@ -9,11 +9,11 @@ public class Main {
         Pelaaja pelaaja = new Pelaaja("ossi");
         Mapbuilder mapbuilder = new Mapbuilder();
         Kartta map = mapbuilder.buildmap();
-        map.getMantereet().get("P-Amerikka").getAlueet().get(1).setYksikko(new Yksikko(pelaaja, map.getMantereet().get("P-Amerikka").getAlueet().get(1)));
+        map.getMantereet().get("P-Amerikka").getAlueet().get(1).setYksikko(new Yksikko(pelaaja));
         map.getMantereet().get("P-Amerikka").getAlueet().get(1).getYksikko().setVahvuus(6);
 
         System.out.println(map);
-        map.tulostaViereisetAlueetJaJoukot();
+//        map.tulostaViereisetAlueetJaJoukot();
 
     }
 

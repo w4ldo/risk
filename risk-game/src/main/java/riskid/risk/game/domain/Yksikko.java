@@ -4,12 +4,10 @@ package riskid.risk.game.domain;
 public class Yksikko {
     private int vahvuus;
     private final Pelaaja pelaaja;
-    private Alue alue;
     
-    public Yksikko(Pelaaja pelaaja, Alue alue) {
+    public Yksikko(Pelaaja pelaaja) {
         this.vahvuus = 1;
         this.pelaaja = pelaaja;
-        this.alue = alue;
         
     }
 
@@ -25,9 +23,6 @@ public class Yksikko {
         return pelaaja;
     }
 
-    public Alue getAlue() {
-        return alue;
-    }
 
     @Override
     public String toString() {

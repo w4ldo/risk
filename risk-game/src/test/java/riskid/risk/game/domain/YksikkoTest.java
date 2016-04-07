@@ -19,7 +19,6 @@ import static org.junit.Assert.*;
 public class YksikkoTest {
 
     Yksikko yksikko;
-    Alue alue;
     Pelaaja pelaaja;
 
     public YksikkoTest() {
@@ -35,9 +34,8 @@ public class YksikkoTest {
 
     @Before
     public void setUp() {
-        alue = new Alue(1);
         pelaaja = new Pelaaja("ossi");
-        yksikko = new Yksikko(pelaaja, alue);
+        yksikko = new Yksikko(pelaaja);
     }
 
     @After
@@ -53,11 +51,6 @@ public class YksikkoTest {
     }
     
     @Test
-    public void konstruktoriAsettaaAlueenOikein() {
-        assertEquals(alue, yksikko.getAlue());
-    }
-    
-    @Test
     public void VahvuusAlussaYksi() {
         assertEquals(1, yksikko.getVahvuus());
     }
@@ -67,6 +60,13 @@ public class YksikkoTest {
         yksikko.setVahvuus(5);
         assertEquals(5, yksikko.getVahvuus());
     }
+    
+    @Test
+    public void toStringToimii() {
+        assertEquals("ossi: 1", yksikko.toString());
+    }
+    
+    
 
 //     @Test
 //     public void hello() {}

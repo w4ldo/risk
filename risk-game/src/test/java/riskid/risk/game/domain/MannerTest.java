@@ -5,6 +5,7 @@
  */
 package riskid.risk.game.domain;
 
+import java.util.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -61,6 +62,14 @@ public class MannerTest {
     @Test
     public void toStringluetteleeNimenJaAlueet() {
         assertEquals("manner: 1, 2", manner.toString());
+    }
+    
+    @Test
+    public void getAlueetPalauttaaAlueet() {
+        Map<Integer, Alue> map = new HashMap<>();
+        map.put(1, eka);
+        map.put(2, toka);
+        assertEquals(map, manner.getAlueet());
     }
     // @Test
     // public void hello() {}
