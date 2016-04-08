@@ -1,14 +1,13 @@
-
 package riskid.risk.game.sovelluslogiikka;
 
 import riskid.risk.game.domain.*;
 
 public class JoukkojenLiikuttaja {
-    
+
     public JoukkojenLiikuttaja() {
-        
+
     }
-    
+
     public void liikutaYksikkoa(Alue mista, Alue mihin, int montako) {
         //tämä metodi jaetaan osiiin. näyttää aika hirveeltä atm.
         if (mista.onkoViereinen(mihin)) {
@@ -20,20 +19,17 @@ public class JoukkojenLiikuttaja {
                     mihin.setYksikko(new Yksikko(mista.getHallitsija()));
                     mihin.getYksikko().setVahvuus(montako);
                     mihin.setHallitsija(mista.getHallitsija());
+                } else if (!mista.getHallitsija().equals(mihin.getHallitsija())) {
+                    //taistellaaaaaaaaaaaaaaaan :DDD
                 } else {
-                    if (!mista.getHallitsija().equals(mihin.getHallitsija())) {
-                        //taistellaaaaaaaaaaaaaaaan :DDD
-                    } else {
-                        //passiivinen liikeasdasdasdasd
-                    }
+                    //passiivinen liikeasdasdasdasd
                 }
             } else {
                 System.out.println("Laiton siirto, liikuta vähintään yhtä ja jätä vähintään yksi taakse");
             }
-        }
-        else {
+        } else {
             System.out.println("Laitoin siirto, alueet eivä ole vierekkäin");
         }
     }
-    
+
 }

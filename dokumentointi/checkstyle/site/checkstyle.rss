@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 9,
-             Errors: 0,
+      <title>File: 10,
+             Errors: 2,
              Warnings: 0,
              Infos: 0
       </title>
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#riskid.risk.game.domain.Kartta.java">riskid/risk/game/domain/Kartta.java</a>
+                  <a href="${project.url}/checkstyle.html#riskid.risk.game.sovelluslogiikka.MapBuilder.java">riskid/risk/game/sovelluslogiikka/MapBuilder.java</a>
                 </td>
                 <td>
                   0
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#riskid.risk.game.sovelluslogiikka.Mapbuilder.java">riskid/risk/game/sovelluslogiikka/Mapbuilder.java</a>
+                  <a href="${project.url}/checkstyle.html#riskid.risk.game.domain.Kartta.java">riskid/risk/game/domain/Kartta.java</a>
                 </td>
                 <td>
                   0
@@ -103,6 +103,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#riskid.risk.game.domain.Pelaaja.java">riskid/risk/game/domain/Pelaaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#riskid.risk.game.kayttoliittyma.UI.java">riskid/risk/game/kayttoliittyma/UI.java</a>
                 </td>
                 <td>
                   0
@@ -167,7 +181,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                       </tbody>

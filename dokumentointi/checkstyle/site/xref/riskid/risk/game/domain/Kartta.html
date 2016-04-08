@@ -25,28 +25,47 @@
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>          <strong class="jxr_keyword">return</strong> mantereet;
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      }
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment">//    public void tulostaViereisetAlueetJaJoukot() {</em>
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment">//        for (Manner m : this.mantereet.values()) {</em>
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment">//            for (Alue a : m.getAlueet().values()) {</em>
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_comment">//                System.out.println(a.getId() + ": " + a.getViereiset() + ", " + a.getYksikko());</em>
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_comment">//            }</em>
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_comment">//        }</em>
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_comment">//    }</em>
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>      @Override
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>      <strong class="jxr_keyword">public</strong> String toString() {
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>          String a = <span class="jxr_string">""</span>;
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>          <strong class="jxr_keyword">int</strong> i = 0;
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>          <strong class="jxr_keyword">for</strong> (Manner m : <strong class="jxr_keyword">this</strong>.mantereet.values()) {
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>              a += m.toString();
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>              <strong class="jxr_keyword">if</strong> (i &lt; <strong class="jxr_keyword">this</strong>.mantereet.size() - 1) {
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>                  a += <span class="jxr_string">"\n"</span>;
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>              }
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>              i++;
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>          }
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>          <strong class="jxr_keyword">return</strong> a;
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>      }
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>  }
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../riskid/risk/game/domain/Alue.html">Alue</a> getAlue(<strong class="jxr_keyword">int</strong> i) {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>          <strong class="jxr_keyword">if</strong> (i &gt;= 1 &amp;&amp; i &lt;= 9) {
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.mantereet.get(<span class="jxr_string">"P-Amerikka"</span>).getAlue(i);
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>          } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (i &gt;= 10 &amp;&amp; i &lt;= 13) {
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.mantereet.get(<span class="jxr_string">"E-Amerikka"</span>).getAlue(i);
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>          } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (i &gt;= 14 &amp;&amp; i &lt;= 20) {
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.mantereet.get(<span class="jxr_string">"Eurooppa"</span>).getAlue(i);
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>          } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (i &gt;= 21 &amp;&amp; i &lt;= 26) {
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.mantereet.get(<span class="jxr_string">"Afrikka"</span>).getAlue(i);
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>          } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (i &gt;= 27 &amp;&amp; i &lt;= 38) {
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.mantereet.get(<span class="jxr_string">"Aasia"</span>).getAlue(i);
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (i &gt;= 39 &amp;&amp; i &lt;= 42) {
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.mantereet.get(<span class="jxr_string">"Australia"</span>).getAlue(i);
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          }
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>      }
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tulostaViereisetAlueetJaJoukot() {
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>          <em class="jxr_comment">//lähinnä testausta varten</em>
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>          <strong class="jxr_keyword">for</strong> (Manner m : <strong class="jxr_keyword">this</strong>.mantereet.values()) {
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>              <strong class="jxr_keyword">for</strong> (Alue a : m.getAlueet().values()) {
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>                  System.out.println(a.getId() + <span class="jxr_string">": "</span> + a.getViereiset() + <span class="jxr_string">", "</span> + a.getYksikko());
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>              }
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>          }
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      }
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      @Override
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>          String a = <span class="jxr_string">""</span>;
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          <strong class="jxr_keyword">int</strong> i = 0;
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          <strong class="jxr_keyword">for</strong> (Manner m : <strong class="jxr_keyword">this</strong>.mantereet.values()) {
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>              a += m.toString();
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>              <strong class="jxr_keyword">if</strong> (i &lt; <strong class="jxr_keyword">this</strong>.mantereet.size() - 1) {
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>                  a += <span class="jxr_string">"\n"</span>;
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>              }
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>              i++;
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>          }
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>          <strong class="jxr_keyword">return</strong> a;
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>      }
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016. All rights reserved.</div>

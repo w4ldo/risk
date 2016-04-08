@@ -35,14 +35,14 @@ public class Kartta {
         }
     }
 
-//    public void tulostaViereisetAlueetJaJoukot() {
-//        //lähinnä testausta varten
-//        for (Manner m : this.mantereet.values()) {
-//            for (Alue a : m.getAlueet().values()) {
-//                System.out.println(a.getId() + ": " + a.getViereiset() + ", " + a.getYksikko());
-//            }
-//        }
-//    }
+    public void tulostaViereisetAlueetJaJoukot() {
+        //lähinnä testausta varten
+        for (Manner m : this.mantereet.values()) {
+            for (Alue a : m.getAlueet().values()) {
+                System.out.println(a.getId() + ": " + a.getViereiset() + ", " + a.getYksikko());
+            }
+        }
+    }
     @Override
     public String toString() {
         String a = "";
