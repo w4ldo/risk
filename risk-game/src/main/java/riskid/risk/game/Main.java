@@ -7,13 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         Pelaaja pelaaja = new Pelaaja("ossi");
-        Mapbuilder mapbuilder = new Mapbuilder();
+        MapBuilder mapbuilder = new MapBuilder();
         Kartta map = mapbuilder.buildmap();
-        map.getMantereet().get("P-Amerikka").getAlueet().get(1).setYksikko(new Yksikko(pelaaja));
-        map.getMantereet().get("P-Amerikka").getAlueet().get(1).getYksikko().setVahvuus(6);
+        map.getAlue(1).setYksikko(new Yksikko(pelaaja));
+        map.getAlue(1).getYksikko().setVahvuus(6);
 
         System.out.println(map);
-//        map.tulostaViereisetAlueetJaJoukot();
+        map.tulostaViereisetAlueetJaJoukot();
 
     }
 

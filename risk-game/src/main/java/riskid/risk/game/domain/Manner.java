@@ -20,6 +20,13 @@ public class Manner {
     public Map<Integer, Alue> getAlueet() {
         return alueet;
     }
+    
+    public Alue getAlue(int i) {
+        if (this.alueet.containsKey(i)) {
+            return this.alueet.get(i);
+        }
+        return null;
+    }
 
     public String getNimi() {
         return nimi;

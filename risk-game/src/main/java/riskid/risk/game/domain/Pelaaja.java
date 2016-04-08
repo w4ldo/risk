@@ -32,4 +32,5 @@ public class Pelaaja {
         return this.getNimi();
     }
     
+    
 }

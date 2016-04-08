@@ -17,14 +17,32 @@ public class Kartta {
         return mantereet;
     }
 
-//    public void tulostaViereisetAlueetJaJoukot() {
-//        //lähinnä testausta varten
-//        for (Manner m : this.mantereet.values()) {
-//            for (Alue a : m.getAlueet().values()) {
-//                System.out.println(a.getId() + ": " + a.getViereiset() + ", " + a.getYksikko());
-//            }
-//        }
-//    }
+    public Alue getAlue(int i) {
+        if (i >= 1 && i <= 9) {
+            return this.mantereet.get("P-Amerikka").getAlue(i);
+        } else if (i >= 10 && i <= 13) {
+            return this.mantereet.get("E-Amerikka").getAlue(i);
+        } else if (i >= 14 && i <= 20) {
+            return this.mantereet.get("Eurooppa").getAlue(i);
+        } else if (i >= 21 && i <= 26) {
+            return this.mantereet.get("Afrikka").getAlue(i);
+        } else if (i >= 27 && i <= 38) {
+            return this.mantereet.get("Aasia").getAlue(i);
+        } else if (i >= 39 && i <= 42) {
+            return this.mantereet.get("Australia").getAlue(i);
+        } else {
+            return null;
+        }
+    }
+
+    public void tulostaViereisetAlueetJaJoukot() {
+        //lähinnä testausta varten
+        for (Manner m : this.mantereet.values()) {
+            for (Alue a : m.getAlueet().values()) {
+                System.out.println(a.getId() + ": " + a.getViereiset() + ", " + a.getYksikko());
+            }
+        }
+    }
     @Override
     public String toString() {
         String a = "";

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import riskid.risk.game.domain.*;
 
-public class Mapbuilder {
+public class MapBuilder {
 
-    public Mapbuilder() {
+    public MapBuilder() {
         //tämä luokka rakentaa pelilaudan. Lauta on staattinen 42 aluetta, 6 mannerta
         //tästä syystä esim alueiden viereisyydet ja mantereiden rakenteet on kovakoodattu metodiin
     }

@@ -43,6 +43,13 @@ public class Alue {
     public Map<Integer, Alue> getViereiset() {
         return viereiset;
     }
+    
+    public boolean onkoViereinen(Alue alue) {
+        if (this.getViereiset().containsKey(alue.getId())) {
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public String toString() {
