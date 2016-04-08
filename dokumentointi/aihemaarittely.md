@@ -7,6 +7,9 @@
 - liikuttaa joukkoja alueesta toiseen (valtaus & passiivinen liike)
 - hallita alueita ja maanosia (lisäjoukkojen saaminen)
 
+**Pelilauta**
+- Kartta koostuu 42 alueesta, jotka muodostavat 6 maanosaa. Jokaisella alueella on yksi tai useampi viereinen alue. Alueiden suhteet ovat ennalta määritetty ja ne pysyvät samoina koko pelin.
+
 **Voittaminen**
 - Peli jatkuu kunnes yksi pelaajista hallitsee koko lautaa
 
