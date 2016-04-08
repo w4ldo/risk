@@ -10,6 +10,7 @@ public class JoukkojenLiikuttaja {
     }
     
     public void liikutaYksikkoa(Alue mista, Alue mihin, int montako) {
+        //tämä metodi jaetaan osiiin. näyttää aika hirveeltä atm.
         if (mista.onkoViereinen(mihin)) {
             if (montako >= 1 && montako < mista.getYksikko().getVahvuus()) {
                 if (mihin.getYksikko() == null) {
