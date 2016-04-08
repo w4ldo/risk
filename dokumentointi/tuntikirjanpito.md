@@ -9,3 +9,5 @@ Päivä | Tunnit | Kuvaus
 29.03.2016 | 1h | Suunnitteluu
 01.04.2016 | 1h | Luokkien ohjelmointii
 06.04.2026 | 4h | Mapbuilder, Laudan rakenne
+07.04.2016 | 1h | jotain
+08.04.2016 | 4h | sovelluslogiikkaa, testejä, koodikatselmoinnin kehitysehdotusten läpikäynti
