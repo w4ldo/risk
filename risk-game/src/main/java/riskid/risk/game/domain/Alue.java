@@ -31,6 +31,10 @@ public class Alue {
     public Yksikko getYksikko() {
         return yksikko;
     }
+    
+    public int getYksikonVahvuus() {
+        return this.yksikko.getVahvuus();
+    }
 
     public Pelaaja getHallitsija() {
         return hallitsija;

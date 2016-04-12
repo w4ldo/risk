@@ -1,5 +1,6 @@
 package riskid.risk.game;
 
+import java.util.*;
 import riskid.risk.game.domain.*;
 import riskid.risk.game.sovelluslogiikka.*;
 
@@ -24,7 +25,6 @@ public class Main {
 
         System.out.println(map);
         map.tulostaViereisetAlueetJaJoukot();
-
     }
 
 }

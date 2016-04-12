@@ -19,6 +19,7 @@ public class JoukkojenLiikuttaja {
                     //taistellaaaaaaaaaaaaaaaan :DDD
                 } else {
                     //passiivinen liikeasdasdasdasd
+                    liikutaOmalleAlueelle(mista, mihin, montako);
                 }
             } else {
                 System.out.println("Laiton siirto, liikuta vähintään yhtä ja jätä vähintään yksi taakse");
@@ -29,8 +30,8 @@ public class JoukkojenLiikuttaja {
     }
 
     public void liikutaOmalleAlueelle(Alue mista, Alue mihin, int montako) {
-        mista.getYksikko().setVahvuus(mista.getYksikko().getVahvuus() - montako);
-        mihin.getYksikko().setVahvuus(mihin.getYksikko().getVahvuus() + montako);
+        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
+        mihin.getYksikko().setVahvuus(mihin.getYksikonVahvuus() + montako);
     }
 
     public void liikutaVihollisAlueelle(Alue mista, Alue mihin, int montako) {
@@ -38,7 +39,7 @@ public class JoukkojenLiikuttaja {
     }
 
     public void liikutaNeutraalilleAlueelle(Alue mista, Alue mihin, int montako) {
-        mista.getYksikko().setVahvuus(mista.getYksikko().getVahvuus() - montako);
+        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
         mihin.setYksikko(new Yksikko(mista.getHallitsija()));
         mihin.getYksikko().setVahvuus(montako);
         mihin.setHallitsija(mista.getHallitsija());
