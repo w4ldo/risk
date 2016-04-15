@@ -19,7 +19,7 @@ public class MapBuilder {
         return map;
     }
 
-    public List<Alue> buildAlueet() {
+    private List<Alue> buildAlueet() {
         List<Alue> lista = new ArrayList<>();
         for (int i = 1; i <= 42; i++) {
             lista.add(new Alue(i));
@@ -27,7 +27,7 @@ public class MapBuilder {
         return lista;
     }
 
-    public List<Manner> buildMantereet(List<Alue> lista) {
+    private List<Manner> buildMantereet(List<Alue> lista) {
         List<Manner> mantereet = new ArrayList<>();
         mantereet.add(new Manner(1, "P-Amerikka",
                 lista.get(0), lista.get(1), lista.get(2), lista.get(3), lista.get(4),
@@ -49,13 +49,13 @@ public class MapBuilder {
         return mantereet;
     }
 
-    public Kartta buildKartta(List<Manner> lista) {
+    private Kartta buildKartta(List<Manner> lista) {
         Kartta map = new Kartta(lista.get(0), lista.get(1), lista.get(2),
                 lista.get(3), lista.get(4), lista.get(5));
         return map;
     }
 
-    public void asetaViereiset(List<Alue> lista) {
+    private void asetaViereiset(List<Alue> lista) {
         lista.get(0).setViereiset(lista.get(29), lista.get(1), lista.get(3));
         lista.get(1).setViereiset(lista.get(0), lista.get(2), lista.get(3), lista.get(4));
         lista.get(2).setViereiset(lista.get(1), lista.get(4), lista.get(5), lista.get(13));

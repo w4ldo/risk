@@ -34,6 +34,21 @@ public class Kartta {
             return null;
         }
     }
+    
+    public boolean onkoTyhjiaAlueita() {
+        int i = 0;
+        for (Manner m : this.mantereet.values()) {
+            for (Alue a : m.getAlueet().values()) {
+                i++;
+            }
+        }
+        for (int a = 1; a <= i; a++) {
+            if (this.getAlue(a).getYksikko() == null) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void tulostaViereisetAlueetJaJoukot() {
         //lähinnä testausta varten
@@ -43,6 +58,7 @@ public class Kartta {
             }
         }
     }
+
     @Override
     public String toString() {
         String a = "";

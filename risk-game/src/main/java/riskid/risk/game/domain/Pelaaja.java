@@ -16,11 +16,15 @@ public class Pelaaja {
     public String getNimi() {
         return nimi;
     }
-    
+
     public void lisaaReserviin(int maara) {
 //        reservillä tarkoitetaan pelaajan laudalle sijoittamattomien joukkujen määrää
 //        i.e joukot jotka saadaan pelin alussa ja vuorojen alkaessa
         this.reservi += maara;
+    }
+
+    public void poistaReservista(int maara) {
+        this.reservi -= maara;
     }
 
     public int getReservi() {
@@ -31,6 +35,5 @@ public class Pelaaja {
     public String toString() {
         return this.getNimi();
     }
-    
-    
+
 }

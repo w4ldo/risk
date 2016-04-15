@@ -10,7 +10,8 @@ public class Taistelusimulaattori {
     public Taistelusimulaattori() {
         this.random = new Random();
     }
-
+    //hyökkääjä heittää 1-3 nopppaa, puolustaja 1-2 noppaa.
+    //puolustaja voittaa tasapelit, noppia heitetään kunnes toinen armeija on tuhottu
     public void taistele(Alue mista, Alue mihin, int montako) {
         int hyokkaaja = montako;
         int puolustaja = mihin.getYksikonVahvuus();

@@ -31,7 +31,7 @@ public class Alue {
     public Yksikko getYksikko() {
         return yksikko;
     }
-    
+
     public int getYksikonVahvuus() {
         return this.yksikko.getVahvuus();
     }
@@ -47,7 +47,7 @@ public class Alue {
     public Map<Integer, Alue> getViereiset() {
         return viereiset;
     }
-    
+
     public boolean onkoViereinen(Alue alue) {
         if (this.getViereiset().containsKey(alue.getId())) {
             return true;
