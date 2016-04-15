@@ -4,8 +4,10 @@ import riskid.risk.game.domain.*;
 
 public class JoukkojenLiikuttaja {
 
-    public JoukkojenLiikuttaja() {
+    private Taistelusimulaattori ts;
 
+    public JoukkojenLiikuttaja() {
+        ts = new Taistelusimulaattori();
     }
 
     public void liikutaYksikkoa(Alue mista, Alue mihin, int montako) {
@@ -17,6 +19,7 @@ public class JoukkojenLiikuttaja {
                     liikutaNeutraalilleAlueelle(mista, mihin, montako);
                 } else if (!mista.getHallitsija().equals(mihin.getHallitsija())) {
                     //taistellaaaaaaaaaaaaaaaan :DDD
+                    liikutaVihollisAlueelle(mista, mihin, montako);
                 } else {
                     //passiivinen liikeasdasdasdasd
                     liikutaOmalleAlueelle(mista, mihin, montako);
@@ -29,16 +32,16 @@ public class JoukkojenLiikuttaja {
         }
     }
 
-    public void liikutaOmalleAlueelle(Alue mista, Alue mihin, int montako) {
+    private void liikutaOmalleAlueelle(Alue mista, Alue mihin, int montako) {
         mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
         mihin.getYksikko().setVahvuus(mihin.getYksikonVahvuus() + montako);
     }
 
-    public void liikutaVihollisAlueelle(Alue mista, Alue mihin, int montako) {
-
+    private void liikutaVihollisAlueelle(Alue mista, Alue mihin, int montako) {
+        ts.taistele(mista, mihin, montako);
     }
 
-    public void liikutaNeutraalilleAlueelle(Alue mista, Alue mihin, int montako) {
+    private void liikutaNeutraalilleAlueelle(Alue mista, Alue mihin, int montako) {
         mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
         mihin.setYksikko(new Yksikko(mista.getHallitsija()));
         mihin.getYksikko().setVahvuus(montako);

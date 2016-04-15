@@ -46,14 +46,29 @@ public class Taistelusimulaattori {
                 } else {
                     hyokkaaja--;
                 }
+            } else if (hyokkaajanHeitot.get(0) < puolustajanHeitot.get(0)) {
+                puolustaja--;
             } else {
-                if (hyokkaajanHeitot.get(0) < puolustajanHeitot.get(0)) {
-                    puolustaja--;
-                } else {
-                    hyokkaaja--;
-                }
+                hyokkaaja--;
             }
         }
-        
+        if (hyokkaaja > 0) {
+            this.hyokkaajaVoittaa(mista, mihin, montako, hyokkaaja);
+        } else {
+            this.puolustajaVoittaa(mista, mihin, montako, puolustaja);
+        }
     }
+
+    private void hyokkaajaVoittaa(Alue mista, Alue mihin, int montako, int hyokkaajat) {
+        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
+        mihin.setYksikko(new Yksikko(mista.getHallitsija()));
+        mihin.getYksikko().setVahvuus(hyokkaajat);
+        mihin.setHallitsija(mista.getHallitsija());
+    }
+
+    private void puolustajaVoittaa(Alue mista, Alue mihin, int montako, int puolustajat) {
+        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
+        mihin.getYksikko().setVahvuus(puolustajat);
+    }
+
 }
