@@ -11,3 +11,8 @@ Päivä | Tunnit | Kuvaus
 06.04.2026 | 4h | Mapbuilder, Laudan rakenne
 07.04.2016 | 1h | jotain
 08.04.2016 | 4h | sovelluslogiikkaa, testejä, koodikatselmoinnin kehitysehdotusten läpikäynti
+11.04.2016 | 2h | koodailuu
+12.04.2016 | 2h | sovelluslogiikkaa, ohjelman rakennetta
+15.04.2016 | 3h | sovelluslogiikkaa,
+
+
