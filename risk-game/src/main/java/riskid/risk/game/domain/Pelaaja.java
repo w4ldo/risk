@@ -5,7 +5,6 @@ import java.util.*;
 public class Pelaaja {
 
     private String nimi;
-    private List<Yksikko> joukot;
     private int reservi;
 
     public Pelaaja(String nimi) {

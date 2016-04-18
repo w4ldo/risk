@@ -112,6 +112,8 @@ public class Peli {
         sinisenVuoro = !sinisenVuoro;
     }
 
+    //hyökkäysvaiheessa pelaaja suorittaa omilta alueiltaan niin monta hyökkäystä vihollisen alueille
+    //kuin haluaa. Lopetetaan komennolla 999
     private void hyokkaysVaihe(Pelaaja pelaaja) {
         System.out.println("Hyökkaysvaihe, lopeta komennolla 999");
         while (true) {
@@ -126,9 +128,9 @@ public class Peli {
                 int minne = kysyLukua();
                 if (onkoLukuSallittu(minne)) {
                     if (map.getAlue(minne).getHallitsija() == pelaaja) {
-                    System.out.println("Hyökkää vihollisesi alueelle");
-                    continue;
-                }
+                        System.out.println("Hyökkää vihollisesi alueelle");
+                        continue;
+                    }
                     System.out.println("Monellako hyökätään?");
                     int monellako = 0;
                     try {
@@ -151,6 +153,8 @@ public class Peli {
         }
     }
 
+    //vahvistusvaiheessa pelaaja suorittaa enintään 3 siirtoa omilla alueillaan.
+    //Lopetetaan komennolla 999, tai kun 3 siirtoa on suoritettu
     private void vahvistusVaihe(Pelaaja pelaaja) {
         System.out.println("Vahvistusvaihe, siirrä enintään kolmea omaa joukkoa, lopeta komennolla 999");
         int x = 0;
@@ -166,9 +170,9 @@ public class Peli {
                 int mihin = kysyLukua();
                 if (onkoLukuSallittu(mihin)) {
                     if (map.getAlue(mihin).getHallitsija() != pelaaja) {
-                    System.out.println("Siirrä omalle alueellesi");
-                    continue;
-                }
+                        System.out.println("Siirrä omalle alueellesi");
+                        continue;
+                    }
                     if (map.getAlue(mista).onkoViereinen(map.getAlue(mihin))) {
                         System.out.println("Montako siirretään?");
                         int montako = kysyLukua();

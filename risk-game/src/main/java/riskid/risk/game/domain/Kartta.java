@@ -60,7 +60,7 @@ public class Kartta {
         }
         return joukot;
     }
-    
+
     public boolean voittaako(Pelaaja pelaaja) {
         for (Manner m : this.mantereet.values()) {
             if (!m.onkoBonus(pelaaja)) {
