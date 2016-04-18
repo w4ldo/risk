@@ -34,7 +34,7 @@ public class Kartta {
             return null;
         }
     }
-    
+
     public boolean onkoTyhjiaAlueita() {
         int i = 0;
         for (Manner m : this.mantereet.values()) {
@@ -48,6 +48,38 @@ public class Kartta {
             }
         }
         return false;
+    }
+
+    public int laskePelaajanLisajoukot(Pelaaja pelaaja) {
+        int joukot = 0;
+        joukot += laskePelaajanAlueet(pelaaja) / 3;
+        for (Manner m : this.getMantereet().values()) {
+            if (m.onkoBonus(pelaaja)) {
+                joukot += m.getBonus();
+            }
+        }
+        return joukot;
+    }
+    
+    public boolean voittaako(Pelaaja pelaaja) {
+        for (Manner m : this.mantereet.values()) {
+            if (!m.onkoBonus(pelaaja)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private int laskePelaajanAlueet(Pelaaja pelaaja) {
+        int i = 0;
+        for (Manner m : this.mantereet.values()) {
+            for (Alue a : m.getAlueet().values()) {
+                if (a.getHallitsija() == pelaaja) {
+                    i++;
+                }
+            }
+        }
+        return i;
     }
 
     public void tulostaViereisetAlueetJaJoukot() {

@@ -37,16 +37,16 @@ public class JoukkojenLiikuttaja {
     public void hyokkaaTaiValtaa(Alue mista, Alue mihin, int montako) {
         if (mista.onkoViereinen(mihin)) {
             if (montako >= 1 && montako < mista.getYksikko().getVahvuus()) {
-                if (mihin.getYksikko() == null) {
+                if (!mista.getHallitsija().equals(mihin.getHallitsija())) {
+                    //                    //taistellaaaaaaaaaaaaaaaan :DDD
+                    liikutaVihollisAlueelle(mista, mihin, montako);
+//                } else if (mihin.getYksikko() == null) {
                     //jos siirto on laillinen ja ruutu tyhjä, siirretään
                     //haluttu määrä sotilaita ruutuun
-                    liikutaNeutraalilleAlueelle(mista, mihin, montako);
-                } else if (!mista.getHallitsija().equals(mihin.getHallitsija())) {
-                    //taistellaaaaaaaaaaaaaaaan :DDD
-                    liikutaVihollisAlueelle(mista, mihin, montako);
+//                    liikutaNeutraalilleAlueelle(mista, mihin, montako);
                 } else {
                     //passiivinen liikeasdasdasdasd
-                    liikutaOmalleAlueelle(mista, mihin, montako);
+                    System.out.println("Laiton siirto: valtaa vihollisen alueita");
                 }
             } else {
                 System.out.println("Laiton siirto: liikuta vähintään yhtä ja jätä vähintään yksi taakse");
@@ -60,7 +60,6 @@ public class JoukkojenLiikuttaja {
         if (mista.onkoViereinen(mihin)) {
             if (montako >= 1 && montako < mista.getYksikko().getVahvuus()) {
                 if (mista.getHallitsija().equals(mihin.getHallitsija())) {
-                    //passiivinen liike
                     liikutaOmalleAlueelle(mista, mihin, montako);
                     return true;
                 } else {
@@ -84,11 +83,10 @@ public class JoukkojenLiikuttaja {
         ts.taistele(mista, mihin, montako);
     }
 
-    private void liikutaNeutraalilleAlueelle(Alue mista, Alue mihin, int montako) {
-        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
-        mihin.setYksikko(new Yksikko(mista.getHallitsija()));
-        mihin.getYksikko().setVahvuus(montako);
-        mihin.setHallitsija(mista.getHallitsija());
-    }
-
+//    private void liikutaNeutraalilleAlueelle(Alue mista, Alue mihin, int montako) {
+//        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
+//        mihin.setYksikko(new Yksikko(mista.getHallitsija()));
+//        mihin.getYksikko().setVahvuus(montako);
+//        mihin.setHallitsija(mista.getHallitsija());
+//    }
 }

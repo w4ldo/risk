@@ -29,22 +29,22 @@ public class MapBuilder {
 
     private List<Manner> buildMantereet(List<Alue> lista) {
         List<Manner> mantereet = new ArrayList<>();
-        mantereet.add(new Manner(1, "P-Amerikka",
+        mantereet.add(new Manner(5, "P-Amerikka",
                 lista.get(0), lista.get(1), lista.get(2), lista.get(3), lista.get(4),
                 lista.get(5), lista.get(6), lista.get(7), lista.get(8)));
-        mantereet.add(new Manner(1, "E-Amerikka",
+        mantereet.add(new Manner(2, "E-Amerikka",
                 lista.get(9), lista.get(10), lista.get(11), lista.get(12)));
-        mantereet.add(new Manner(1, "Eurooppa",
+        mantereet.add(new Manner(5, "Eurooppa",
                 lista.get(13), lista.get(14), lista.get(15), lista.get(16), lista.get(17),
                 lista.get(18), lista.get(19)));
-        mantereet.add(new Manner(1, "Afrikka",
+        mantereet.add(new Manner(3, "Afrikka",
                 lista.get(20), lista.get(21), lista.get(22), lista.get(23), lista.get(24),
                 lista.get(25)));
-        mantereet.add(new Manner(1, "Aasia",
+        mantereet.add(new Manner(7, "Aasia",
                 lista.get(26), lista.get(27), lista.get(28), lista.get(29), lista.get(30),
                 lista.get(31), lista.get(32), lista.get(33), lista.get(34), lista.get(35),
                 lista.get(36), lista.get(37)));
-        mantereet.add(new Manner(1, "Australia",
+        mantereet.add(new Manner(2, "Australia",
                 lista.get(38), lista.get(39), lista.get(40), lista.get(41)));
         return mantereet;
     }
