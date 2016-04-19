@@ -38,14 +38,9 @@ public class JoukkojenLiikuttaja {
         if (mista.onkoViereinen(mihin)) {
             if (montako >= 1 && montako < mista.getYksikko().getVahvuus()) {
                 if (!mista.getHallitsija().equals(mihin.getHallitsija())) {
-                    //                    //taistellaaaaaaaaaaaaaaaan :DDD
+                    //taistellaaaaaaaaaaaaaaaan :DDD
                     liikutaVihollisAlueelle(mista, mihin, montako);
-//                } else if (mihin.getYksikko() == null) {
-                    //jos siirto on laillinen ja ruutu tyhjä, siirretään
-                    //haluttu määrä sotilaita ruutuun
-//                    liikutaNeutraalilleAlueelle(mista, mihin, montako);
                 } else {
-                    //passiivinen liikeasdasdasdasd
                     System.out.println("Laiton siirto: valtaa vihollisen alueita");
                 }
             } else {
@@ -83,10 +78,4 @@ public class JoukkojenLiikuttaja {
         ts.taistele(mista, mihin, montako);
     }
 
-//    private void liikutaNeutraalilleAlueelle(Alue mista, Alue mihin, int montako) {
-//        mista.getYksikko().setVahvuus(mista.getYksikonVahvuus() - montako);
-//        mihin.setYksikko(new Yksikko(mista.getHallitsija()));
-//        mihin.getYksikko().setVahvuus(montako);
-//        mihin.setHallitsija(mista.getHallitsija());
-//    }
 }

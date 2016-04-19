@@ -7,17 +7,17 @@ public class Peli {
 
     private MapBuilder mb;
     private JoukkojenLiikuttaja jl;
-    private Scanner lukija;
+    private LuvunKysyja lk;
     private Kartta map;
     private Pelaaja sininen;
     private Pelaaja keltainen;
     private boolean sinisenVuoro;
     private boolean onkoVoittajaa;
 
-    public Peli() {
+    public Peli(Scanner lukija) {
         this.mb = new MapBuilder();
+        this.lk = new LuvunKysyja(lukija);
         this.jl = new JoukkojenLiikuttaja();
-        this.lukija = new Scanner(System.in);
         this.map = mb.buildmap();
         this.sininen = new Pelaaja("Sininen");
         this.keltainen = new Pelaaja("Keltainen");
@@ -26,7 +26,6 @@ public class Peli {
     }
 
     public void run() {
-
         pelinAlustus();
         while (!onkoVoittajaa) {
             if (sinisenVuoro) {
@@ -49,16 +48,13 @@ public class Peli {
         keltainen.lisaaReserviin(60);
         aloitusjoukkojenSijoitus();
         aloitusjoukkojenVahvistus();
-
-        System.out.println("reservit: sininen" + sininen.getReservi() + ", keltainen " + keltainen.getReservi());
     }
 
     private void aloitusjoukkojenSijoitus() {
         System.out.println("Aloitusjoukkojen sijoitus");
         while (map.onkoTyhjiaAlueita()) {
-            int luku = kysyLukua();
-
-            if (!onkoLukuSallittu(luku)) {
+            int luku = lk.kysyLukua();
+            if (!lk.onkoLukuSallittu(luku)) {
                 System.out.println("Valitse alue 1-42");
                 continue;
             }
@@ -89,8 +85,8 @@ public class Peli {
         int i = 0;
         System.out.println("Lisäjoukkojen sijoitus");
         while (i < maara) {
-            int luku = kysyLukua();
-            if (!onkoLukuSallittu(luku)) {
+            int luku = lk.kysyLukua();
+            if (!lk.onkoLukuSallittu(luku)) {
                 System.out.println("Valitse alue 1-42");
                 continue;
             }
@@ -118,27 +114,22 @@ public class Peli {
         System.out.println("Hyökkaysvaihe, lopeta komennolla 999");
         while (true) {
             System.out.println("Mistä hyökätään?");
-            int mista = kysyLukua();
-            if (onkoLukuSallittu(mista)) {
+            int mista = lk.kysyLukua();
+            if (lk.onkoLukuSallittu(mista)) {
                 if (map.getAlue(mista).getHallitsija() != pelaaja) {
                     System.out.println("Hyökkää omalta alueeltasi");
                     continue;
                 }
                 System.out.println("Minne hyökätään?");
-                int minne = kysyLukua();
-                if (onkoLukuSallittu(minne)) {
+                int minne = lk.kysyLukua();
+                if (lk.onkoLukuSallittu(minne)) {
                     if (map.getAlue(minne).getHallitsija() == pelaaja) {
                         System.out.println("Hyökkää vihollisesi alueelle");
                         continue;
                     }
                     System.out.println("Monellako hyökätään?");
                     int monellako = 0;
-                    try {
-                        monellako = Integer.parseInt(lukija.nextLine());
-                    } catch (Exception e) {
-                        System.out.println("Ei kirjaimii senki hessu vaan numeroita.");
-                        continue;
-                    }
+                    monellako = lk.monellakoHyokataan();
                     jl.hyokkaaTaiValtaa(map.getAlue(mista), map.getAlue(minne), monellako);
                     if (map.voittaako(pelaaja)) {
                         onkoVoittajaa = true;
@@ -157,33 +148,29 @@ public class Peli {
     //Lopetetaan komennolla 999, tai kun 3 siirtoa on suoritettu
     private void vahvistusVaihe(Pelaaja pelaaja) {
         System.out.println("Vahvistusvaihe, siirrä enintään kolmea omaa joukkoa, lopeta komennolla 999");
-        int x = 0;
-        while (x < 3) {
+        int siirtoja = 0;
+        while (siirtoja < 3) {
             System.out.println("Mitä joukkoa liikutetaan?");
-            int mista = kysyLukua();
-            if (onkoLukuSallittu(mista)) {
+            int mista = lk.kysyLukua();
+            if (lk.onkoLukuSallittu(mista)) {
                 if (map.getAlue(mista).getHallitsija() != pelaaja) {
                     System.out.println("Siirrä omalta alueeltasi");
                     continue;
                 }
                 System.out.println("Mihin liikutaan?");
-                int mihin = kysyLukua();
-                if (onkoLukuSallittu(mihin)) {
+                int mihin = lk.kysyLukua();
+                if (lk.onkoLukuSallittu(mihin)) {
                     if (map.getAlue(mihin).getHallitsija() != pelaaja) {
                         System.out.println("Siirrä omalle alueellesi");
                         continue;
                     }
-                    if (map.getAlue(mista).onkoViereinen(map.getAlue(mihin))) {
-                        System.out.println("Montako siirretään?");
-                        int montako = kysyLukua();
-                        if (montako >= 1 && montako < map.getAlue(mista).getYksikonVahvuus()) {
-                            jl.passiivinenLiike(map.getAlue(mista), map.getAlue(mihin), montako);
-                        } else {
-                            System.out.println("Liikuta vähintään yhtä ja jätä vähintään yksi taakse");
-                            continue;
-                        }
+                    System.out.println("Montako siirretään?");
+                    int montako = lk.kysyLukua();
+                    if (map.getAlue(mista).onkoViereinen(map.getAlue(mihin)) && montako >= 1 && montako < map.getAlue(mista).getYksikonVahvuus()) {
+                        jl.passiivinenLiike(map.getAlue(mista), map.getAlue(mihin), montako);
                     } else {
-                        System.out.println("Siirrä vain viereiselle alueelle");
+                        System.out.println("Siirrä vain viereiselle alueelle.");
+                        System.out.println("Liikuta vähintään yhtä ja jätä vähintään yksi taakse");
                         continue;
                     }
                 } else {
@@ -194,25 +181,8 @@ public class Peli {
             } else {
                 continue;
             }
-            x++;
+            siirtoja++;
         }
-    }
-
-    private int kysyLukua() {
-        int luku = 0;
-        try {
-            luku = Integer.parseInt(lukija.nextLine());
-        } catch (Exception e) {
-            System.out.println("Ei kirjaimii senki hessu vaan numeroita.");
-        }
-        return luku;
-    }
-
-    private boolean onkoLukuSallittu(int luku) {
-        if (luku > 0 && luku < 43) {
-            return true;
-        }
-        return false;
     }
 
 }
