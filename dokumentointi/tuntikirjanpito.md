@@ -14,5 +14,7 @@ Päivä | Tunnit | Kuvaus
 11.04.2016 | 2h | koodailuu
 12.04.2016 | 2h | sovelluslogiikkaa, ohjelman rakennetta
 15.04.2016 | 3h | sovelluslogiikkaa,
+18.04.2016 | 6h | peli luokka
+19.04.2016 | 3h | lisäyskii etc
 
 
