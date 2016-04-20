@@ -55,7 +55,6 @@ public class Peli {
         while (map.onkoTyhjiaAlueita()) {
             int luku = lk.kysyLukua();
             if (!lk.onkoLukuSallittu(luku)) {
-                System.out.println("Valitse alue 1-42");
                 continue;
             }
             if (sinisenVuoro) {
