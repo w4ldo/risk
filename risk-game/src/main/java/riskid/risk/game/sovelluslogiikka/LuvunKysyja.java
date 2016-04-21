@@ -1,21 +1,23 @@
 package riskid.risk.game.sovelluslogiikka;
 
-import java.util.Scanner;
+import riskid.risk.game.kayttoliittyma.GUI;
+
+
 
 public class LuvunKysyja {
+    private GUI gui;
 
-    private Scanner lukija;
-
-    public LuvunKysyja(Scanner lukija) {
-        this.lukija = lukija;
+    public LuvunKysyja(GUI gui) {
+        this.gui = gui;
     }
 
     public int kysyLukua() {
         int luku = 0;
         try {
-            luku = Integer.parseInt(lukija.nextLine());
+            luku = Integer.parseInt(gui.getTekstiKentta());
         } catch (Exception e) {
-            System.out.println("Ei kirjaimii senki hessu vaan numeroita.");
+            gui.uusiAlert("Ei kirjaimii senki hessu vaan numeroita.");
+            gui.getTekstiKentta();
         }
         return luku;
     }
@@ -26,16 +28,16 @@ public class LuvunKysyja {
         } else if (luku == 999) {
             return false;
         }
-        System.out.println("Valitse alue 1-42");
+        gui.uusiIlmoitus("Valitse alue 1-42");
         return false;
     }
 
     public int monellakoHyokataan() {
         int monellako = 0;
         try {
-            monellako = Integer.parseInt(lukija.nextLine());
+            monellako = Integer.parseInt(gui.getTekstiKentta());
         } catch (Exception e) {
-            System.out.println("Ei kirjaimii senki hessu vaan numeroita.");
+            gui.uusiIlmoitus("Ei kirjaimii senki hessu vaan numeroita.");
         }
         return monellako;
     }

@@ -2,6 +2,7 @@ package riskid.risk.game.sovelluslogiikka;
 
 import java.util.Scanner;
 import riskid.risk.game.domain.*;
+import riskid.risk.game.kayttoliittyma.GUI;
 
 public class Peli {
 
@@ -9,136 +10,151 @@ public class Peli {
     private JoukkojenLiikuttaja jl;
     private LuvunKysyja lk;
     private Kartta map;
-    private Pelaaja sininen;
-    private Pelaaja keltainen;
-    private boolean sinisenVuoro;
+    private Pelaaja pelaajaA;
+    private Pelaaja pelaajaB;
+    private boolean pelaajaAVuoro;
     private boolean onkoVoittajaa;
+    private GUI gui;
 
-    public Peli(Scanner lukija) {
+    public Peli() {
+        this.gui = new GUI();
         this.mb = new MapBuilder();
-        this.lk = new LuvunKysyja(lukija);
-        this.jl = new JoukkojenLiikuttaja();
+        this.jl = new JoukkojenLiikuttaja(gui);
         this.map = mb.buildmap();
-        this.sininen = new Pelaaja("Sininen");
-        this.keltainen = new Pelaaja("Keltainen");
-        this.sinisenVuoro = true;
+        this.pelaajaA = new Pelaaja("Alpha");
+        this.pelaajaB = new Pelaaja("Bravo");
+        this.pelaajaAVuoro = true;
         this.onkoVoittajaa = false;
+
+        this.lk = new LuvunKysyja(gui);
     }
 
     public void run() {
+        gui.setVisible(true);
         pelinAlustus();
         while (!onkoVoittajaa) {
-            if (sinisenVuoro) {
-                System.out.println("Uusi vuoro: sininen");
-                uusiVuoro(sininen);
+            if (pelaajaAVuoro) {
+                gui.uusiIlmoitus("Uusi vuoro: sininen");
+                uusiVuoro(pelaajaA);
             } else {
-                System.out.println("Uusi vuoro: keltainen");
-                uusiVuoro(keltainen);
+                gui.uusiIlmoitus("Uusi vuoro: keltainen");
+                uusiVuoro(pelaajaB);
             }
         }
-        if (sinisenVuoro) {
-            System.out.println("gg, sininen voitti");
+        if (pelaajaAVuoro) {
+            gui.uusiIlmoitus("gg, sininen voitti");
         } else {
-            System.out.println("gg, keltainen voitti");
+            gui.uusiIlmoitus("gg, keltainen voitti");
         }
     }
 
     private void pelinAlustus() {
-        sininen.lisaaReserviin(60);
-        keltainen.lisaaReserviin(60);
+        pelaajaA.lisaaReserviin(60);
+        pelaajaB.lisaaReserviin(60);
         aloitusjoukkojenSijoitus();
         aloitusjoukkojenVahvistus();
     }
 
     private void aloitusjoukkojenSijoitus() {
-        System.out.println("Aloitusjoukkojen sijoitus");
+        gui.uusiIlmoitus("Aloitusjoukkojen sijoitus");
         while (map.onkoTyhjiaAlueita()) {
-            int luku = lk.kysyLukua();
-            if (!lk.onkoLukuSallittu(luku)) {
-                continue;
-            }
-            if (sinisenVuoro) {
-                if (!jl.sijoitaAloitusJoukkoja(map.getAlue(luku), sininen)) {
+            if (gui.onkoTekstia()) {
+                int luku = lk.kysyLukua();
+                if (!lk.onkoLukuSallittu(luku)) {
                     continue;
                 }
-            } else if (!jl.sijoitaAloitusJoukkoja(map.getAlue(luku), keltainen)) {
-                continue;
+                if (pelaajaAVuoro) {
+                    if (!jl.sijoitaAloitusJoukkoja(map.getAlue(luku), pelaajaA)) {
+                        continue;
+                    }
+                } else if (!jl.sijoitaAloitusJoukkoja(map.getAlue(luku), pelaajaB)) {
+                    continue;
+                }
+                pelaajaAVuoro = !pelaajaAVuoro;
             }
-            sinisenVuoro = !sinisenVuoro;
+            gui.paivitaGui(map.tulostaKartta());
         }
     }
 
     private void aloitusjoukkojenVahvistus() {
-        System.out.println("Aloitusjoukkojen vahvistus");
-        while (sininen.getReservi() > 0 || keltainen.getReservi() > 0) {
-            if (this.sinisenVuoro) {
-                lisajoukkojenSijoitus(sininen, 3);
-            } else {
-                lisajoukkojenSijoitus(keltainen, 3);
+        gui.uusiIlmoitus("Aloitusjoukkojen vahvistus. Lisää 3 yksikköä");
+        while (pelaajaA.getReservi() > 0 || pelaajaB.getReservi() > 0) {
+            if (gui.onkoTekstia()) {
+                if (this.pelaajaAVuoro) {
+                    lisajoukkojenSijoitus(pelaajaA, 3);
+                } else {
+                    lisajoukkojenSijoitus(pelaajaB, 3);
+                }
+                pelaajaAVuoro = !pelaajaAVuoro;
             }
-            sinisenVuoro = !sinisenVuoro;
+            gui.paivitaGui(map.tulostaKartta());
         }
     }
 
     private void lisajoukkojenSijoitus(Pelaaja pelaaja, int maara) {
         int i = 0;
-        System.out.println("Lisäjoukkojen sijoitus");
+        gui.uusiIlmoitus("Lisäjoukkojen sijoitus");
         while (i < maara) {
-            int luku = lk.kysyLukua();
-            if (!lk.onkoLukuSallittu(luku)) {
-                System.out.println("Valitse alue 1-42");
-                continue;
+            if (gui.onkoTekstia()) {
+                int luku = lk.kysyLukua();
+                if (!lk.onkoLukuSallittu(luku)) {
+                    gui.uusiIlmoitus("Valitse alue 1-42");
+                    continue;
+                }
+                if (!jl.sijoitaLisajoukkoja(map.getAlue(luku), 1, pelaaja)) {
+                    continue;
+                }
+                i++;
             }
-            if (!jl.sijoitaLisajoukkoja(map.getAlue(luku), 1, pelaaja)) {
-                continue;
-            }
-            i++;
+            gui.paivitaGui(map.tulostaKartta());
         }
     }
 
     private void uusiVuoro(Pelaaja pelaaja) {
-        System.out.println("Sijoita lisäjoukkoja");
+        gui.uusiIlmoitus("Sijoita lisäjoukkoja");
         lisajoukkojenSijoitus(pelaaja, map.laskePelaajanLisajoukot(pelaaja));
         hyokkaysVaihe(pelaaja);
         if (onkoVoittajaa) {
             return;
         }
         vahvistusVaihe(pelaaja);
-        sinisenVuoro = !sinisenVuoro;
+        pelaajaAVuoro = !pelaajaAVuoro;
     }
 
     //hyökkäysvaiheessa pelaaja suorittaa omilta alueiltaan niin monta hyökkäystä vihollisen alueille
     //kuin haluaa. Lopetetaan komennolla 999
     private void hyokkaysVaihe(Pelaaja pelaaja) {
-        System.out.println("Hyökkaysvaihe, lopeta komennolla 999");
+        gui.uusiIlmoitus("Hyökkaysvaihe, lopeta komennolla 999");
         while (true) {
-            System.out.println("Mistä hyökätään?");
-            int mista = lk.kysyLukua();
-            if (lk.onkoLukuSallittu(mista)) {
-                if (map.getAlue(mista).getHallitsija() != pelaaja) {
-                    System.out.println("Hyökkää omalta alueeltasi");
-                    continue;
-                }
-                System.out.println("Minne hyökätään?");
-                int minne = lk.kysyLukua();
-                if (lk.onkoLukuSallittu(minne)) {
-                    if (map.getAlue(minne).getHallitsija() == pelaaja) {
-                        System.out.println("Hyökkää vihollisesi alueelle");
+            gui.uusiIlmoitus("Mistä hyökätään?");
+            if (gui.onkoTekstia()) {
+                int mista = lk.kysyLukua();
+                if (lk.onkoLukuSallittu(mista)) {
+                    if (map.getAlue(mista).getHallitsija() != pelaaja) {
+                        gui.uusiIlmoitus("Hyökkää omalta alueeltasi");
                         continue;
                     }
-                    System.out.println("Monellako hyökätään?");
-                    int monellako = 0;
-                    monellako = lk.monellakoHyokataan();
-                    jl.hyokkaaTaiValtaa(map.getAlue(mista), map.getAlue(minne), monellako);
-                    if (map.voittaako(pelaaja)) {
-                        onkoVoittajaa = true;
-                        break;
+                    gui.uusiIlmoitus("Minne hyökätään?");
+                    int minne = lk.kysyLukua();
+                    if (lk.onkoLukuSallittu(minne)) {
+                        if (map.getAlue(minne).getHallitsija() == pelaaja) {
+                            gui.uusiIlmoitus("Hyökkää vihollisesi alueelle");
+                            continue;
+                        }
+                        gui.uusiIlmoitus("Monellako hyökätään?");
+                        int monellako = 0;
+                        monellako = lk.monellakoHyokataan();
+                        jl.hyokkaaTaiValtaa(map.getAlue(mista), map.getAlue(minne), monellako);
+                        if (map.voittaako(pelaaja)) {
+                            onkoVoittajaa = true;
+                            break;
+                        }
+                    } else {
+                        gui.uusiIlmoitus("Laiton siirto");
                     }
-                } else {
-                    System.out.println("Laiton siirto");
+                } else if (mista == 999) {
+                    break;
                 }
-            } else if (mista == 999) {
-                break;
             }
         }
     }
@@ -146,30 +162,31 @@ public class Peli {
     //vahvistusvaiheessa pelaaja suorittaa enintään 3 siirtoa omilla alueillaan.
     //Lopetetaan komennolla 999, tai kun 3 siirtoa on suoritettu
     private void vahvistusVaihe(Pelaaja pelaaja) {
-        System.out.println("Vahvistusvaihe, siirrä enintään kolmea omaa joukkoa, lopeta komennolla 999");
+        gui.uusiIlmoitus("Vahvistusvaihe, siirrä enintään kolmea omaa joukkoa, lopeta komennolla 999");
         int siirtoja = 0;
         while (siirtoja < 3) {
-            System.out.println("Mitä joukkoa liikutetaan?");
+            gui.uusiIlmoitus(
+                    "Mitä joukkoa liikutetaan?");
             int mista = lk.kysyLukua();
             if (lk.onkoLukuSallittu(mista)) {
                 if (map.getAlue(mista).getHallitsija() != pelaaja) {
-                    System.out.println("Siirrä omalta alueeltasi");
+                    gui.uusiIlmoitus("Siirrä omalta alueeltasi");
                     continue;
                 }
-                System.out.println("Mihin liikutaan?");
+                gui.uusiIlmoitus("Mihin liikutaan?");
                 int mihin = lk.kysyLukua();
                 if (lk.onkoLukuSallittu(mihin)) {
                     if (map.getAlue(mihin).getHallitsija() != pelaaja) {
-                        System.out.println("Siirrä omalle alueellesi");
+                        gui.uusiIlmoitus("Siirrä omalle alueellesi");
                         continue;
                     }
-                    System.out.println("Montako siirretään?");
+                    gui.uusiIlmoitus("Montako siirretään?");
                     int montako = lk.kysyLukua();
                     if (map.getAlue(mista).onkoViereinen(map.getAlue(mihin)) && montako >= 1 && montako < map.getAlue(mista).getYksikonVahvuus()) {
                         jl.passiivinenLiike(map.getAlue(mista), map.getAlue(mihin), montako);
                     } else {
-                        System.out.println("Siirrä vain viereiselle alueelle.");
-                        System.out.println("Liikuta vähintään yhtä ja jätä vähintään yksi taakse");
+                        gui.uusiIlmoitus("Siirrä vain viereiselle alueelle.");
+                        gui.uusiIlmoitus("Liikuta vähintään yhtä ja jätä vähintään yksi taakse");
                         continue;
                     }
                 } else {

@@ -1,13 +1,16 @@
 package riskid.risk.game.sovelluslogiikka;
 
 import riskid.risk.game.domain.*;
+import riskid.risk.game.kayttoliittyma.GUI;
 
 public class JoukkojenLiikuttaja {
 
     private Taistelusimulaattori ts;
-
-    public JoukkojenLiikuttaja() {
-        ts = new Taistelusimulaattori();
+    private GUI gui;
+    
+    public JoukkojenLiikuttaja(GUI gui) {
+        this.ts = new Taistelusimulaattori();
+        this.gui = gui;
     }
 
     public boolean sijoitaAloitusJoukkoja(Alue minne, Pelaaja kenen) {
@@ -17,7 +20,7 @@ public class JoukkojenLiikuttaja {
             kenen.poistaReservista(1);
             return true;
         } else {
-            System.out.println("Laiton siirto: sijoita joukkoja tyhjään ruutuun");
+            gui.uusiAlert("Laiton siirto: sijoita joukkoja tyhjään ruutuun");
         }
 
         return false;
@@ -29,7 +32,7 @@ public class JoukkojenLiikuttaja {
             kenen.poistaReservista(montako);
             return true;
         } else {
-            System.out.println("Laiton siirto: lisää joukkoja omille alueillesi");
+            gui.uusiAlert("Laiton siirto: lisää joukkoja omille alueillesi");
         }
         return false;
     }
@@ -41,13 +44,13 @@ public class JoukkojenLiikuttaja {
                     //taistellaaaaaaaaaaaaaaaan :DDD
                     liikutaVihollisAlueelle(mista, mihin, montako);
                 } else {
-                    System.out.println("Laiton siirto: valtaa vihollisen alueita");
+                    gui.uusiAlert("Laiton siirto: valtaa vihollisen alueita");
                 }
             } else {
-                System.out.println("Laiton siirto: liikuta vähintään yhtä ja jätä vähintään yksi taakse");
+                gui.uusiAlert("Laiton siirto: liikuta vähintään yhtä ja jätä vähintään yksi taakse");
             }
         } else {
-            System.out.println("Laitoin siirto: alueet eivä ole vierekkäin");
+            gui.uusiAlert("Laitoin siirto: alueet eivä ole vierekkäin");
         }
     }
 
@@ -58,13 +61,13 @@ public class JoukkojenLiikuttaja {
                     liikutaOmalleAlueelle(mista, mihin, montako);
                     return true;
                 } else {
-                    System.out.println("Laiton siirto: siirrä omalle alueelle");
+                    gui.uusiAlert("Laiton siirto: siirrä omalle alueelle");
                 }
             } else {
-                System.out.println("Laiton siirto: liikuta vähintään yhtä ja jätä vähintään yksi taakse");
+                gui.uusiAlert("Laiton siirto: liikuta vähintään yhtä ja jätä vähintään yksi taakse");
             }
         } else {
-            System.out.println("Laitoin siirto: alueet eivä ole vierekkäin");
+            gui.uusiAlert("Laitoin siirto: alueet eivä ole vierekkäin");
         }
         return false;
     }

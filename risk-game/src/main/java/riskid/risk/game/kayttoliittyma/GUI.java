@@ -5,6 +5,8 @@
  */
 package riskid.risk.game.kayttoliittyma;
 
+import java.util.List;
+
 /**
  *
  * @author imatias
@@ -27,8 +29,10 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tekstiKentta = new javax.swing.JTextField();
         nappi = new javax.swing.JButton();
+        tekstiKentta = new javax.swing.JTextField();
+        syoteKentta = new javax.swing.JTextField();
+        alerts = new javax.swing.JLabel();
         ilmoitukset = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,20 +43,45 @@ public class GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1100, 650));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        tekstiKentta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tekstiKenttaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(tekstiKentta);
-        tekstiKentta.setBounds(50, 600, 120, 30);
 
         nappi.setText("ok");
         nappi.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +90,29 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nappi);
-        nappi.setBounds(180, 600, 110, 30);
+        nappi.setBounds(180, 560, 110, 70);
+
+        tekstiKentta.setEditable(false);
+        tekstiKentta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tekstiKenttaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tekstiKentta);
+        tekstiKentta.setBounds(80, 670, 70, 20);
+
+        syoteKentta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                syoteKenttaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(syoteKentta);
+        syoteKentta.setBounds(80, 600, 80, 30);
+
+        alerts.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        alerts.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 254, 254), 1, true));
+        getContentPane().add(alerts);
+        alerts.setBounds(320, 560, 740, 30);
 
         ilmoitukset.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         ilmoitukset.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 254, 254), 1, true));
@@ -69,58 +120,256 @@ public class GUI extends javax.swing.JFrame {
         ilmoitukset.setBounds(320, 600, 740, 30);
 
         jLabel1.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 60, 90, 30);
+        jLabel1.setBounds(10, 60, 100, 30);
 
         jLabel2.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "2", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 60, 90, 30);
+        jLabel2.setBounds(110, 60, 100, 30);
 
         jLabel3.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "3", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(270, 30, 90, 30);
+        jLabel3.setBounds(270, 30, 100, 30);
 
         jLabel4.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "4", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 120, 90, 30);
+        jLabel4.setBounds(70, 120, 100, 30);
 
         jLabel5.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel5.setForeground(new java.awt.Color(1, 1, 1));
         jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "5", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(160, 100, 90, 30);
+        jLabel5.setBounds(160, 100, 100, 30);
 
         jLabel6.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel6.setForeground(new java.awt.Color(1, 1, 1));
         jLabel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "6", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(220, 130, 90, 30);
+        jLabel6.setBounds(220, 130, 100, 30);
 
         jLabel7.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel7.setForeground(new java.awt.Color(1, 1, 1));
         jLabel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "7", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(90, 160, 90, 30);
+        jLabel7.setBounds(90, 160, 100, 30);
 
         jLabel8.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setForeground(new java.awt.Color(1, 1, 1));
         jLabel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "8", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(170, 190, 90, 30);
+        jLabel8.setBounds(170, 190, 100, 30);
 
         jLabel9.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel9.setForeground(new java.awt.Color(1, 1, 1));
         jLabel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "9", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(100, 250, 90, 30);
+        jLabel9.setBounds(100, 250, 100, 30);
+
+        jLabel10.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "10", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(160, 290, 100, 30);
+
+        jLabel11.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "11", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(110, 340, 100, 30);
+
+        jLabel12.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "12", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(240, 340, 100, 30);
+
+        jLabel13.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "13", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(170, 440, 100, 30);
+
+        jLabel14.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "14", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(340, 80, 100, 30);
+
+        jLabel15.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "15", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(420, 60, 100, 30);
+
+        jLabel16.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "16", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(510, 110, 100, 30);
+
+        jLabel17.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "17", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(320, 150, 100, 30);
+
+        jLabel18.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "18", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(430, 160, 100, 30);
+
+        jLabel19.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "19", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(330, 220, 100, 30);
+
+        jLabel20.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel20.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "20", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(430, 210, 100, 30);
+
+        jLabel21.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel21.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "21", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(370, 340, 100, 30);
+
+        jLabel22.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel22.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "22", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(460, 300, 100, 30);
+
+        jLabel23.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "23", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(440, 400, 100, 30);
+
+        jLabel24.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel24.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "24", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(500, 360, 100, 30);
+
+        jLabel25.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "25", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel25);
+        jLabel25.setBounds(460, 470, 100, 30);
+
+        jLabel26.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel26.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "26", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel26);
+        jLabel26.setBounds(570, 480, 100, 30);
+
+        jLabel27.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel27.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "27", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel27);
+        jLabel27.setBounds(600, 90, 100, 30);
+
+        jLabel28.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel28.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "28", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel28);
+        jLabel28.setBounds(640, 60, 100, 30);
+
+        jLabel29.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel29.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "29", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel29);
+        jLabel29.setBounds(730, 40, 100, 30);
+
+        jLabel30.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "30", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel30);
+        jLabel30.setBounds(830, 40, 100, 30);
+
+        jLabel31.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel31.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "31", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel31);
+        jLabel31.setBounds(710, 120, 100, 30);
+
+        jLabel32.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel32.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "32", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(580, 170, 100, 30);
+
+        jLabel33.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "33", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel33);
+        jLabel33.setBounds(680, 210, 100, 30);
+
+        jLabel34.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "34", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel34);
+        jLabel34.setBounds(730, 170, 100, 30);
+
+        jLabel35.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "35", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel35);
+        jLabel35.setBounds(850, 180, 100, 30);
+
+        jLabel36.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "36", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel36);
+        jLabel36.setBounds(530, 260, 100, 30);
+
+        jLabel37.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "37", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel37);
+        jLabel37.setBounds(640, 260, 100, 30);
+
+        jLabel38.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "38", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel38);
+        jLabel38.setBounds(730, 290, 100, 30);
+
+        jLabel39.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel39.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "39", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel39);
+        jLabel39.setBounds(720, 380, 100, 30);
+
+        jLabel40.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "40", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel40);
+        jLabel40.setBounds(830, 360, 100, 30);
+
+        jLabel41.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel41.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "41", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel41);
+        jLabel41.setBounds(770, 470, 100, 30);
+
+        jLabel42.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel42.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "42", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        getContentPane().add(jLabel42);
+        jLabel42.setBounds(860, 440, 100, 30);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finalRisk.png"))); // NOI18N
         getContentPane().add(background);
@@ -135,7 +384,80 @@ public class GUI extends javax.swing.JFrame {
 
     private void nappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nappiActionPerformed
         // TODO add your handling code here:
+        tekstiKentta.setText(syoteKentta.getText());
+        
+        syoteKentta.setText("");
     }//GEN-LAST:event_nappiActionPerformed
+
+    private void syoteKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syoteKenttaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syoteKenttaActionPerformed
+
+    public void uusiIlmoitus(String teksti) {
+        this.ilmoitukset.setText(teksti);
+    }
+
+    public void uusiAlert(String teksti) {
+        this.alerts.setText(teksti);
+    }
+
+    public String getTekstiKentta() {
+        String teksti = tekstiKentta.getText();
+        tekstiKentta.setText("");
+        return teksti;
+    }
+
+    public boolean onkoTekstia() {
+        if (tekstiKentta.getText().equals("")) {
+            return false;
+        }
+        return true;
+    }
+
+    public void paivitaGui(List<String> lista) {
+        jLabel1.setText(lista.get(0));
+        jLabel2.setText(lista.get(1));
+        jLabel3.setText(lista.get(2));
+        jLabel4.setText(lista.get(3));
+        jLabel5.setText(lista.get(4));
+        jLabel6.setText(lista.get(5));
+        jLabel7.setText(lista.get(6));
+        jLabel8.setText(lista.get(7));
+        jLabel9.setText(lista.get(8));
+        jLabel10.setText(lista.get(9));
+        jLabel11.setText(lista.get(10));
+        jLabel12.setText(lista.get(11));
+        jLabel13.setText(lista.get(12));
+        jLabel14.setText(lista.get(13));
+        jLabel15.setText(lista.get(14));
+        jLabel16.setText(lista.get(15));
+        jLabel17.setText(lista.get(16));
+        jLabel18.setText(lista.get(17));
+        jLabel19.setText(lista.get(18));
+        jLabel20.setText(lista.get(19));
+        jLabel21.setText(lista.get(20));
+        jLabel22.setText(lista.get(21));
+        jLabel23.setText(lista.get(22));
+        jLabel24.setText(lista.get(23));
+        jLabel25.setText(lista.get(24));
+        jLabel26.setText(lista.get(25));
+        jLabel27.setText(lista.get(26));
+        jLabel28.setText(lista.get(27));
+        jLabel29.setText(lista.get(28));
+        jLabel30.setText(lista.get(29));
+        jLabel31.setText(lista.get(30));
+        jLabel32.setText(lista.get(31));
+        jLabel33.setText(lista.get(32));
+        jLabel34.setText(lista.get(33));
+        jLabel35.setText(lista.get(34));
+        jLabel36.setText(lista.get(35));
+        jLabel37.setText(lista.get(36));
+        jLabel38.setText(lista.get(37));
+        jLabel39.setText(lista.get(38));
+        jLabel40.setText(lista.get(39));
+        jLabel41.setText(lista.get(40));
+        jLabel42.setText(lista.get(41));
+    }
 
     /**
      * @param args the command line arguments
@@ -173,18 +495,53 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alerts;
     private javax.swing.JLabel background;
     private javax.swing.JLabel ilmoitukset;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton nappi;
+    private javax.swing.JTextField syoteKentta;
     private javax.swing.JTextField tekstiKentta;
     // End of variables declaration//GEN-END:variables
 }

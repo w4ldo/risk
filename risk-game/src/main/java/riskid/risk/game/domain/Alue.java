@@ -57,8 +57,10 @@ public class Alue {
 
     @Override
     public String toString() {
-        String a = "";
-        return a + this.getId();
+        if (this.hallitsija == null) {
+            return "";
+        }
+        return this.hallitsija.getNimi() + ":" + this.yksikko.getVahvuus();
     }
 
 }

@@ -8,10 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner lukija = new Scanner(System.in);
-        Peli risk = new Peli(lukija);
-        GUI gui = new GUI();
-        gui.setVisible(true);
+        Peli risk = new Peli();
+
+
         risk.run();
         
 //        Scanner lukija = new Scanner("a");

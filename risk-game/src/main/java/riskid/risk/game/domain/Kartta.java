@@ -81,6 +81,14 @@ public class Kartta {
         }
         return i;
     }
+    
+    public List<String> tulostaKartta() {
+        List<String> lista = new ArrayList<>();
+        for (int i = 1; i <= 42; i++) {
+            lista.add(getAlue(i).toString());
+        }
+        return lista;
+    }
 
     public void tulostaViereisetAlueetJaJoukot() {
         //lähinnä testausta varten
