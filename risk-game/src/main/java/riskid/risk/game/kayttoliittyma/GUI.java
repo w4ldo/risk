@@ -445,12 +445,10 @@ public class GUI extends javax.swing.JFrame {
         mistaLabel.setBounds(20, 550, 45, 22);
 
         alphaReservi.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        alphaReservi.setText("3");
         getContentPane().add(alphaReservi);
         alphaReservi.setBounds(70, 460, 60, 20);
 
         bravoReservi.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
-        bravoReservi.setText("6");
         getContentPane().add(bravoReservi);
         bravoReservi.setBounds(70, 490, 60, 20);
 
@@ -492,10 +490,9 @@ public class GUI extends javax.swing.JFrame {
 
     private void nappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nappiActionPerformed
         // TODO add your handling code here:
-        tekstiKentta.setText(syoteKentta.getText());
         tekstiKentta1.setText((syoteKentta1.getText()));
         tekstiKentta2.setText(syoteKentta2.getText());
-
+        tekstiKentta.setText(syoteKentta.getText());
         syoteKentta.setText("");
         syoteKentta1.setText("");
         syoteKentta2.setText("");
@@ -568,7 +565,7 @@ public class GUI extends javax.swing.JFrame {
         mistaLabel.setVisible(true);
         lopeta.setVisible(true);
         mihinSijoitetaanLabel.setVisible(false);
-        
+
     }
 
     public void teeLisaOsatNakymattomiksi() {
@@ -581,7 +578,7 @@ public class GUI extends javax.swing.JFrame {
         mihinSijoitetaanLabel.setVisible(true);
     }
 
-    public void paivitaGui(List<String> lista, boolean vuoro) {
+    public void paivitaGui(List<String> lista, boolean vuoro, int aReservi, int bReservi) {
         jLabel1.setText(lista.get(0));
         jLabel2.setText(lista.get(1));
         jLabel3.setText(lista.get(2));
@@ -629,6 +626,8 @@ public class GUI extends javax.swing.JFrame {
         } else {
             this.vuoro.setText("Bravo");
         }
+        alphaReservi.setText("" + aReservi);
+        bravoReservi.setText("" + bReservi);
     }
 
     /**

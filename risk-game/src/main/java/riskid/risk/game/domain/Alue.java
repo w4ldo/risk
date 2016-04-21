@@ -49,8 +49,11 @@ public class Alue {
     }
 
     public boolean onkoViereinen(Alue alue) {
-        if (this.getViereiset().containsKey(alue.getId())) {
-            return true;
+        try {
+            if (this.getViereiset().containsKey(alue.getId())) {
+                return true;
+            }
+        } catch (Exception e) {
         }
         return false;
     }

@@ -80,5 +80,6 @@ public class JoukkojenLiikuttaja {
     private void liikutaVihollisAlueelle(Alue mista, Alue mihin, int montako) {
         ts.taistele(mista, mihin, montako);
     }
+    
 
 }

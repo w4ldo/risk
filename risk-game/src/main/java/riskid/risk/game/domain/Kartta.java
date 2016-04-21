@@ -58,6 +58,8 @@ public class Kartta {
                 joukot += m.getBonus();
             }
         }
+        joukot = joukot / 3;
+        joukot = joukot * 3;
         return joukot;
     }
 

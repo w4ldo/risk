@@ -32,22 +32,22 @@ public class LuvunKysyja {
         return false;
     }
     
-    public int mihinHyokataan() {
+    public int mihinSiirretaan() {
         int mihin = 0;
         try {
             mihin = Integer.parseInt(gui.getTekstiKentta(2));
         } catch (Exception e) {
-            gui.uusiIlmoitus("Ei kirjaimii senki hessu vaan numeroita.");
+            gui.uusiAlert("Ei kirjaimii senki hessu vaan numeroita.");
         }
         return mihin;
     }
     
-    public int monellakoHyokataan() {
+    public int montakoSiirretaan() {
         int monellako = 0;
         try {
             monellako = Integer.parseInt(gui.getTekstiKentta(3));
         } catch (Exception e) {
-            gui.uusiIlmoitus("Ei kirjaimii senki hessu vaan numeroita.");
+            gui.uusiAlert("Ei kirjaimii senki hessu vaan numeroita.");
         }
         return monellako;
     }
