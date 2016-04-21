@@ -40,7 +40,10 @@ public class Peli {
                 uusiVuoro(pelaajaB);
             }
         }
-        gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi());
+        gui.paivitaGui(map.tulostaKartta(),
+                pelaajaAVuoro, pelaajaA.getReservi(),
+                pelaajaB.getReservi(),
+                map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         if (pelaajaAVuoro) {
             gui.uusiIlmoitus("gg, Alpha voitti");
         } else {
@@ -74,7 +77,10 @@ public class Peli {
                 gui.uusiIlmoitus("");
                 pelaajaAVuoro = !pelaajaAVuoro;
             }
-            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi());
+            gui.paivitaGui(map.tulostaKartta(),
+                    pelaajaAVuoro, pelaajaA.getReservi(),
+                    pelaajaB.getReservi(),
+                    map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
 
@@ -91,7 +97,10 @@ public class Peli {
                 gui.uusiIlmoitus("");
                 pelaajaAVuoro = !pelaajaAVuoro;
             }
-            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi());
+            gui.paivitaGui(map.tulostaKartta(),
+                    pelaajaAVuoro, pelaajaA.getReservi(),
+                    pelaajaB.getReservi(),
+                    map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
 
@@ -109,7 +118,10 @@ public class Peli {
                 }
                 i++;
             }
-            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi());
+            gui.paivitaGui(map.tulostaKartta(),
+                    pelaajaAVuoro, pelaajaA.getReservi(),
+                    pelaajaB.getReservi(),
+                    map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
 
@@ -127,8 +139,6 @@ public class Peli {
         pelaajaAVuoro = !pelaajaAVuoro;
     }
 
-    //hyökkäysvaiheessa pelaaja suorittaa omilta alueiltaan niin monta hyökkäystä vihollisen alueille
-    //kuin haluaa. Lopetetaan komennolla 999
     private void hyokkaysVaihe(Pelaaja pelaaja) {
         gui.uusiAlert("Hyökkaysvaihe");
         while (true) {
@@ -146,12 +156,13 @@ public class Peli {
                     break;
                 }
             }
-            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi());
+            gui.paivitaGui(map.tulostaKartta(),
+                    pelaajaAVuoro, pelaajaA.getReservi(),
+                    pelaajaB.getReservi(),
+                    map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
 
-    //vahvistusvaiheessa pelaaja suorittaa enintään 3 siirtoa omilla alueillaan.
-    //Lopetetaan komennolla 999, tai kun 3 siirtoa on suoritettu
     private void vahvistusVaihe(Pelaaja pelaaja) {
         gui.uusiIlmoitus("Vahvistusvaihe, siirrä enintään kolmea omaa joukkoa");
         int siirtoja = 0;
@@ -174,7 +185,10 @@ public class Peli {
                     continue;
                 }
             }
-            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi());
+            gui.paivitaGui(map.tulostaKartta(),
+                    pelaajaAVuoro, pelaajaA.getReservi(),
+                    pelaajaB.getReservi(),
+                    map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
 

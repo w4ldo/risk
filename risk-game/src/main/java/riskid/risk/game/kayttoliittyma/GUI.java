@@ -85,9 +85,14 @@ public class GUI extends javax.swing.JFrame {
         mihinSijoitetaanLabel = new javax.swing.JLabel();
         mistaLabel = new javax.swing.JLabel();
         alphaReservi = new javax.swing.JLabel();
+        alphaLisajoukot = new javax.swing.JLabel();
+        bravoLisajoukot = new javax.swing.JLabel();
         bravoReservi = new javax.swing.JLabel();
+        alpha1 = new javax.swing.JLabel();
         alpha = new javax.swing.JLabel();
+        bravo1 = new javax.swing.JLabel();
         bravo = new javax.swing.JLabel();
+        lisajoukotTitle = new javax.swing.JLabel();
         reservTitle = new javax.swing.JLabel();
         mihinLabel = new javax.swing.JLabel();
         montakoLabel = new javax.swing.JLabel();
@@ -446,26 +451,49 @@ public class GUI extends javax.swing.JFrame {
 
         alphaReservi.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         getContentPane().add(alphaReservi);
-        alphaReservi.setBounds(70, 460, 60, 20);
+        alphaReservi.setBounds(70, 470, 60, 20);
+
+        alphaLisajoukot.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        getContentPane().add(alphaLisajoukot);
+        alphaLisajoukot.setBounds(70, 390, 60, 20);
+
+        bravoLisajoukot.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        getContentPane().add(bravoLisajoukot);
+        bravoLisajoukot.setBounds(70, 420, 60, 20);
 
         bravoReservi.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         getContentPane().add(bravoReservi);
-        bravoReservi.setBounds(70, 490, 60, 20);
+        bravoReservi.setBounds(70, 500, 60, 20);
+
+        alpha1.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        alpha1.setText("Alpha:");
+        getContentPane().add(alpha1);
+        alpha1.setBounds(10, 390, 60, 22);
 
         alpha.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         alpha.setText("Alpha:");
         getContentPane().add(alpha);
-        alpha.setBounds(10, 460, 60, 22);
+        alpha.setBounds(10, 470, 60, 22);
+
+        bravo1.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        bravo1.setText("Bravo:");
+        getContentPane().add(bravo1);
+        bravo1.setBounds(10, 420, 60, 22);
 
         bravo.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         bravo.setText("Bravo:");
         getContentPane().add(bravo);
-        bravo.setBounds(10, 490, 60, 22);
+        bravo.setBounds(10, 500, 60, 22);
+
+        lisajoukotTitle.setFont(new java.awt.Font("TlwgTypewriter", 1, 15)); // NOI18N
+        lisajoukotTitle.setText("Lisäjoukot");
+        getContentPane().add(lisajoukotTitle);
+        lisajoukotTitle.setBounds(30, 370, 90, 22);
 
         reservTitle.setFont(new java.awt.Font("TlwgTypewriter", 1, 15)); // NOI18N
         reservTitle.setText("Reservit");
         getContentPane().add(reservTitle);
-        reservTitle.setBounds(30, 440, 90, 22);
+        reservTitle.setBounds(30, 450, 90, 22);
 
         mihinLabel.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         mihinLabel.setText("Mihin");
@@ -585,7 +613,7 @@ public class GUI extends javax.swing.JFrame {
         mihinSijoitetaanLabel.setVisible(true);
     }
 
-    public void paivitaGui(List<String> lista, boolean vuoro, int aReservi, int bReservi) {
+    public void paivitaGui(List<String> lista, boolean vuoro, int aReservi, int bReservi, int aLisajoukot, int bLisajoukot) {
         jLabel1.setText(lista.get(0));
         jLabel2.setText(lista.get(1));
         jLabel3.setText(lista.get(2));
@@ -635,6 +663,8 @@ public class GUI extends javax.swing.JFrame {
         }
         alphaReservi.setText("" + aReservi);
         bravoReservi.setText("" + bReservi);
+        alphaLisajoukot.setText("" + aLisajoukot);
+        bravoLisajoukot.setText("" + bLisajoukot);
     }
 
     /**
@@ -675,9 +705,13 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alerts;
     private javax.swing.JLabel alpha;
+    private javax.swing.JLabel alpha1;
+    private javax.swing.JLabel alphaLisajoukot;
     private javax.swing.JLabel alphaReservi;
     private javax.swing.JLabel background;
     private javax.swing.JLabel bravo;
+    private javax.swing.JLabel bravo1;
+    private javax.swing.JLabel bravoLisajoukot;
     private javax.swing.JLabel bravoReservi;
     private javax.swing.JLabel ilmoitukset;
     private javax.swing.JLabel jLabel1;
@@ -722,6 +756,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lisajoukotTitle;
     private javax.swing.JButton lopeta;
     private javax.swing.JLabel mihinLabel;
     private javax.swing.JLabel mihinSijoitetaanLabel;
