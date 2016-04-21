@@ -10,9 +10,8 @@ public class Main {
 
         Peli risk = new Peli();
 
-
         risk.run();
-        
+
 //        Scanner lukija = new Scanner("a");
 //        LuvunKysyja lk = new LuvunKysyja(lukija);
 //        System.out.println(lk.kysyLukua());

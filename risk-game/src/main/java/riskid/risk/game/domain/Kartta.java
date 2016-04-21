@@ -83,7 +83,7 @@ public class Kartta {
         }
         return i;
     }
-    
+
     public List<String> tulostaKartta() {
         List<String> lista = new ArrayList<>();
         for (int i = 1; i <= 42; i++) {

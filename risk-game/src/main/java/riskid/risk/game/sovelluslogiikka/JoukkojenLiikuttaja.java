@@ -7,7 +7,7 @@ public class JoukkojenLiikuttaja {
 
     private Taistelusimulaattori ts;
     private GUI gui;
-    
+
     public JoukkojenLiikuttaja(GUI gui) {
         this.ts = new Taistelusimulaattori();
         this.gui = gui;
@@ -80,6 +80,5 @@ public class JoukkojenLiikuttaja {
     private void liikutaVihollisAlueelle(Alue mista, Alue mihin, int montako) {
         ts.taistele(mista, mihin, montako);
     }
-    
 
 }

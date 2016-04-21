@@ -493,9 +493,11 @@ public class GUI extends javax.swing.JFrame {
         tekstiKentta1.setText((syoteKentta1.getText()));
         tekstiKentta2.setText(syoteKentta2.getText());
         tekstiKentta.setText(syoteKentta.getText());
-        syoteKentta.setText("");
-        syoteKentta1.setText("");
-        syoteKentta2.setText("");
+        syoteKentta.setText(null);
+        syoteKentta1.setText(null);
+        syoteKentta2.setText(null);
+        ilmoitukset.setText("");
+        alerts.setText("");
     }//GEN-LAST:event_nappiActionPerformed
 
     private void syoteKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syoteKenttaActionPerformed
@@ -520,7 +522,12 @@ public class GUI extends javax.swing.JFrame {
 
     private void lopetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaActionPerformed
         // TODO add your handling code here:
+        tekstiKentta1.setText((syoteKentta1.getText()));
+        tekstiKentta2.setText(syoteKentta2.getText());
         tekstiKentta.setText("999");
+        syoteKentta.setText(null);
+        syoteKentta1.setText(null);
+        syoteKentta2.setText(null);
     }//GEN-LAST:event_lopetaActionPerformed
 
     public void uusiIlmoitus(String teksti) {

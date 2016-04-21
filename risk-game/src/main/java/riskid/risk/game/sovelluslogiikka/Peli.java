@@ -49,8 +49,8 @@ public class Peli {
     }
 
     private void pelinAlustus() {
-        pelaajaA.lisaaReserviin(55);
-        pelaajaB.lisaaReserviin(55);
+        pelaajaA.lisaaReserviin(57);
+        pelaajaB.lisaaReserviin(57);
         aloitusjoukkojenSijoitus();
         aloitusjoukkojenVahvistus();
     }

@@ -2,9 +2,8 @@ package riskid.risk.game.sovelluslogiikka;
 
 import riskid.risk.game.kayttoliittyma.GUI;
 
-
-
 public class LuvunKysyja {
+
     private GUI gui;
 
     public LuvunKysyja(GUI gui) {
@@ -31,23 +30,25 @@ public class LuvunKysyja {
         gui.uusiIlmoitus("Valitse alue 1-42");
         return false;
     }
-    
+
     public int mihinSiirretaan() {
         int mihin = 0;
         try {
             mihin = Integer.parseInt(gui.getTekstiKentta(2));
         } catch (Exception e) {
             gui.uusiAlert("Ei kirjaimii senki hessu vaan numeroita.");
+            String nada = gui.getTekstiKentta(2);
         }
         return mihin;
     }
-    
+
     public int montakoSiirretaan() {
         int monellako = 0;
         try {
             monellako = Integer.parseInt(gui.getTekstiKentta(3));
         } catch (Exception e) {
             gui.uusiAlert("Ei kirjaimii senki hessu vaan numeroita.");
+            String nada = gui.getTekstiKentta(3);
         }
         return monellako;
     }
