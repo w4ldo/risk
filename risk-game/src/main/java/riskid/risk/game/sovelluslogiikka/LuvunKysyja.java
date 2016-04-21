@@ -14,10 +14,10 @@ public class LuvunKysyja {
     public int kysyLukua() {
         int luku = 0;
         try {
-            luku = Integer.parseInt(gui.getTekstiKentta());
+            luku = Integer.parseInt(gui.getTekstiKentta(1));
         } catch (Exception e) {
             gui.uusiAlert("Ei kirjaimii senki hessu vaan numeroita.");
-            gui.getTekstiKentta();
+            String nada = gui.getTekstiKentta(1);
         }
         return luku;
     }
@@ -31,11 +31,21 @@ public class LuvunKysyja {
         gui.uusiIlmoitus("Valitse alue 1-42");
         return false;
     }
-
+    
+    public int mihinHyokataan() {
+        int mihin = 0;
+        try {
+            mihin = Integer.parseInt(gui.getTekstiKentta(2));
+        } catch (Exception e) {
+            gui.uusiIlmoitus("Ei kirjaimii senki hessu vaan numeroita.");
+        }
+        return mihin;
+    }
+    
     public int monellakoHyokataan() {
         int monellako = 0;
         try {
-            monellako = Integer.parseInt(gui.getTekstiKentta());
+            monellako = Integer.parseInt(gui.getTekstiKentta(3));
         } catch (Exception e) {
             gui.uusiIlmoitus("Ei kirjaimii senki hessu vaan numeroita.");
         }

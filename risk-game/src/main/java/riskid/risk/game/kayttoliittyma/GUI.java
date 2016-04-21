@@ -30,8 +30,14 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         nappi = new javax.swing.JButton();
+        lopeta = new javax.swing.JButton();
         tekstiKentta = new javax.swing.JTextField();
+        tekstiKentta1 = new javax.swing.JTextField();
+        tekstiKentta2 = new javax.swing.JTextField();
         syoteKentta = new javax.swing.JTextField();
+        syoteKentta1 = new javax.swing.JTextField();
+        syoteKentta2 = new javax.swing.JTextField();
+        vuoro = new javax.swing.JLabel();
         alerts = new javax.swing.JLabel();
         ilmoitukset = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -76,6 +82,15 @@ public class GUI extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
+        mihinSijoitetaanLabel = new javax.swing.JLabel();
+        mistaLabel = new javax.swing.JLabel();
+        alphaReservi = new javax.swing.JLabel();
+        bravoReservi = new javax.swing.JLabel();
+        alpha = new javax.swing.JLabel();
+        bravo = new javax.swing.JLabel();
+        reservTitle = new javax.swing.JLabel();
+        mihinLabel = new javax.swing.JLabel();
+        montakoLabel = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,7 +105,16 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nappi);
-        nappi.setBounds(180, 560, 110, 70);
+        nappi.setBounds(180, 550, 110, 60);
+
+        lopeta.setText("lopeta");
+        lopeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lopetaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(lopeta);
+        lopeta.setBounds(180, 610, 110, 29);
 
         tekstiKentta.setEditable(false);
         tekstiKentta.addActionListener(new java.awt.event.ActionListener() {
@@ -101,13 +125,52 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(tekstiKentta);
         tekstiKentta.setBounds(80, 670, 70, 20);
 
+        tekstiKentta1.setEditable(false);
+        tekstiKentta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tekstiKentta1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tekstiKentta1);
+        tekstiKentta1.setBounds(80, 670, 70, 20);
+
+        tekstiKentta2.setEditable(false);
+        tekstiKentta2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tekstiKentta2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tekstiKentta2);
+        tekstiKentta2.setBounds(80, 670, 70, 20);
+
         syoteKentta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syoteKenttaActionPerformed(evt);
             }
         });
         getContentPane().add(syoteKentta);
-        syoteKentta.setBounds(80, 600, 80, 30);
+        syoteKentta.setBounds(90, 550, 80, 30);
+
+        syoteKentta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                syoteKentta1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(syoteKentta1);
+        syoteKentta1.setBounds(90, 580, 80, 30);
+
+        syoteKentta2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                syoteKentta2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(syoteKentta2);
+        syoteKentta2.setBounds(90, 610, 80, 30);
+
+        vuoro.setFont(new java.awt.Font("TlwgTypewriter", 1, 15)); // NOI18N
+        vuoro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 254, 254), 1, true));
+        getContentPane().add(vuoro);
+        vuoro.setBounds(320, 520, 90, 30);
 
         alerts.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         alerts.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(254, 254, 254), 1, true));
@@ -123,13 +186,13 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 60, 100, 30);
+        jLabel1.setBounds(30, 50, 100, 30);
 
         jLabel2.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "2", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("TlwgTypewriter", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 60, 100, 30);
+        jLabel2.setBounds(130, 60, 100, 30);
 
         jLabel3.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(1, 1, 1));
@@ -371,6 +434,51 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(jLabel42);
         jLabel42.setBounds(860, 440, 100, 30);
 
+        mihinSijoitetaanLabel.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        mihinSijoitetaanLabel.setText("Mihin");
+        getContentPane().add(mihinSijoitetaanLabel);
+        mihinSijoitetaanLabel.setBounds(20, 550, 45, 22);
+
+        mistaLabel.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        mistaLabel.setText("Mista");
+        getContentPane().add(mistaLabel);
+        mistaLabel.setBounds(20, 550, 45, 22);
+
+        alphaReservi.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        alphaReservi.setText("3");
+        getContentPane().add(alphaReservi);
+        alphaReservi.setBounds(70, 460, 60, 20);
+
+        bravoReservi.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        bravoReservi.setText("6");
+        getContentPane().add(bravoReservi);
+        bravoReservi.setBounds(70, 490, 60, 20);
+
+        alpha.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        alpha.setText("Alpha:");
+        getContentPane().add(alpha);
+        alpha.setBounds(10, 460, 60, 22);
+
+        bravo.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        bravo.setText("Bravo:");
+        getContentPane().add(bravo);
+        bravo.setBounds(10, 490, 60, 22);
+
+        reservTitle.setFont(new java.awt.Font("TlwgTypewriter", 1, 15)); // NOI18N
+        reservTitle.setText("Reservit");
+        getContentPane().add(reservTitle);
+        reservTitle.setBounds(30, 440, 90, 22);
+
+        mihinLabel.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        mihinLabel.setText("Mihin");
+        getContentPane().add(mihinLabel);
+        mihinLabel.setBounds(20, 580, 45, 22);
+
+        montakoLabel.setFont(new java.awt.Font("TlwgTypewriter", 0, 15)); // NOI18N
+        montakoLabel.setText("Montako");
+        getContentPane().add(montakoLabel);
+        montakoLabel.setBounds(10, 610, 70, 22);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finalRisk.png"))); // NOI18N
         getContentPane().add(background);
         background.setBounds(0, 0, 1100, 650);
@@ -385,13 +493,38 @@ public class GUI extends javax.swing.JFrame {
     private void nappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nappiActionPerformed
         // TODO add your handling code here:
         tekstiKentta.setText(syoteKentta.getText());
-        
+        tekstiKentta1.setText((syoteKentta1.getText()));
+        tekstiKentta2.setText(syoteKentta2.getText());
+
         syoteKentta.setText("");
+        syoteKentta1.setText("");
+        syoteKentta2.setText("");
     }//GEN-LAST:event_nappiActionPerformed
 
     private void syoteKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syoteKenttaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_syoteKenttaActionPerformed
+
+    private void tekstiKentta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tekstiKentta1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tekstiKentta1ActionPerformed
+
+    private void tekstiKentta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tekstiKentta2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tekstiKentta2ActionPerformed
+
+    private void syoteKentta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syoteKentta1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syoteKentta1ActionPerformed
+
+    private void syoteKentta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syoteKentta2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syoteKentta2ActionPerformed
+
+    private void lopetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaActionPerformed
+        // TODO add your handling code here:
+        tekstiKentta.setText("999");
+    }//GEN-LAST:event_lopetaActionPerformed
 
     public void uusiIlmoitus(String teksti) {
         this.ilmoitukset.setText(teksti);
@@ -401,10 +534,23 @@ public class GUI extends javax.swing.JFrame {
         this.alerts.setText(teksti);
     }
 
-    public String getTekstiKentta() {
-        String teksti = tekstiKentta.getText();
-        tekstiKentta.setText("");
-        return teksti;
+    public String getTekstiKentta(int luku) {
+        if (luku == 1) {
+            String teksti = tekstiKentta.getText();
+            tekstiKentta.setText("");
+            return teksti;
+        }
+        if (luku == 2) {
+            String teksti = tekstiKentta1.getText();
+            tekstiKentta.setText("");
+            return teksti;
+        }
+        if (luku == 3) {
+            String teksti = tekstiKentta2.getText();
+            tekstiKentta.setText("");
+            return teksti;
+        }
+        return "";
     }
 
     public boolean onkoTekstia() {
@@ -414,7 +560,28 @@ public class GUI extends javax.swing.JFrame {
         return true;
     }
 
-    public void paivitaGui(List<String> lista) {
+    public void teeLisaOsatNakyviksi() {
+        syoteKentta1.setVisible(true);
+        syoteKentta2.setVisible(true);
+        mihinLabel.setVisible(true);
+        montakoLabel.setVisible(true);
+        mistaLabel.setVisible(true);
+        lopeta.setVisible(true);
+        mihinSijoitetaanLabel.setVisible(false);
+        
+    }
+
+    public void teeLisaOsatNakymattomiksi() {
+        syoteKentta1.setVisible(false);
+        syoteKentta2.setVisible(false);
+        mihinLabel.setVisible(false);
+        montakoLabel.setVisible(false);
+        mistaLabel.setVisible(false);
+        lopeta.setVisible(false);
+        mihinSijoitetaanLabel.setVisible(true);
+    }
+
+    public void paivitaGui(List<String> lista, boolean vuoro) {
         jLabel1.setText(lista.get(0));
         jLabel2.setText(lista.get(1));
         jLabel3.setText(lista.get(2));
@@ -457,6 +624,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel40.setText(lista.get(39));
         jLabel41.setText(lista.get(40));
         jLabel42.setText(lista.get(41));
+        if (vuoro) {
+            this.vuoro.setText("Alpha");
+        } else {
+            this.vuoro.setText("Bravo");
+        }
     }
 
     /**
@@ -496,7 +668,11 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alerts;
+    private javax.swing.JLabel alpha;
+    private javax.swing.JLabel alphaReservi;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel bravo;
+    private javax.swing.JLabel bravoReservi;
     private javax.swing.JLabel ilmoitukset;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -540,8 +716,19 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton lopeta;
+    private javax.swing.JLabel mihinLabel;
+    private javax.swing.JLabel mihinSijoitetaanLabel;
+    private javax.swing.JLabel mistaLabel;
+    private javax.swing.JLabel montakoLabel;
     private javax.swing.JButton nappi;
+    private javax.swing.JLabel reservTitle;
     private javax.swing.JTextField syoteKentta;
+    private javax.swing.JTextField syoteKentta1;
+    private javax.swing.JTextField syoteKentta2;
     private javax.swing.JTextField tekstiKentta;
+    private javax.swing.JTextField tekstiKentta1;
+    private javax.swing.JTextField tekstiKentta2;
+    private javax.swing.JLabel vuoro;
     // End of variables declaration//GEN-END:variables
 }

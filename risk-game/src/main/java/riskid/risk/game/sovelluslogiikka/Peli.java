@@ -31,7 +31,9 @@ public class Peli {
 
     public void run() {
         gui.setVisible(true);
+        gui.teeLisaOsatNakymattomiksi();
         pelinAlustus();
+        gui.teeLisaOsatNakyviksi();
         while (!onkoVoittajaa) {
             if (pelaajaAVuoro) {
                 gui.uusiIlmoitus("Uusi vuoro: sininen");
@@ -70,9 +72,11 @@ public class Peli {
                 } else if (!jl.sijoitaAloitusJoukkoja(map.getAlue(luku), pelaajaB)) {
                     continue;
                 }
+                gui.uusiAlert("");
+                gui.uusiIlmoitus("");
                 pelaajaAVuoro = !pelaajaAVuoro;
             }
-            gui.paivitaGui(map.tulostaKartta());
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro);
         }
     }
 
@@ -85,9 +89,11 @@ public class Peli {
                 } else {
                     lisajoukkojenSijoitus(pelaajaB, 3);
                 }
+                gui.uusiAlert("");
+                gui.uusiIlmoitus("");
                 pelaajaAVuoro = !pelaajaAVuoro;
             }
-            gui.paivitaGui(map.tulostaKartta());
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro);
         }
     }
 
@@ -106,7 +112,7 @@ public class Peli {
                 }
                 i++;
             }
-            gui.paivitaGui(map.tulostaKartta());
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro);
         }
     }
 
@@ -124,9 +130,8 @@ public class Peli {
     //hyökkäysvaiheessa pelaaja suorittaa omilta alueiltaan niin monta hyökkäystä vihollisen alueille
     //kuin haluaa. Lopetetaan komennolla 999
     private void hyokkaysVaihe(Pelaaja pelaaja) {
-        gui.uusiIlmoitus("Hyökkaysvaihe, lopeta komennolla 999");
+        gui.uusiAlert("Hyökkaysvaihe, lopeta komennolla 999");
         while (true) {
-            gui.uusiIlmoitus("Mistä hyökätään?");
             if (gui.onkoTekstia()) {
                 int mista = lk.kysyLukua();
                 if (lk.onkoLukuSallittu(mista)) {
@@ -136,22 +141,22 @@ public class Peli {
                     }
                     gui.uusiIlmoitus("Minne hyökätään?");
                     int minne = lk.kysyLukua();
-                    if (lk.onkoLukuSallittu(minne)) {
-                        if (map.getAlue(minne).getHallitsija() == pelaaja) {
-                            gui.uusiIlmoitus("Hyökkää vihollisesi alueelle");
-                            continue;
-                        }
-                        gui.uusiIlmoitus("Monellako hyökätään?");
-                        int monellako = 0;
-                        monellako = lk.monellakoHyokataan();
-                        jl.hyokkaaTaiValtaa(map.getAlue(mista), map.getAlue(minne), monellako);
+//                    if (lk.onkoLukuSallittu(minne)) {
+//                        if (map.getAlue(minne).getHallitsija() == pelaaja) {
+//                            gui.uusiIlmoitus("Hyökkää vihollisesi alueelle");
+//                            continue;
+//                        }
+//                        gui.uusiIlmoitus("Monellako hyökätään?");
+//                        int monellako = 0;
+//                        monellako = lk.monellakoHyokataan();
+//                        jl.hyokkaaTaiValtaa(map.getAlue(mista), map.getAlue(minne), monellako);
                         if (map.voittaako(pelaaja)) {
                             onkoVoittajaa = true;
                             break;
                         }
-                    } else {
-                        gui.uusiIlmoitus("Laiton siirto");
-                    }
+//                    } else {
+//                        gui.uusiIlmoitus("Laiton siirto");
+//                    }
                 } else if (mista == 999) {
                     break;
                 }
