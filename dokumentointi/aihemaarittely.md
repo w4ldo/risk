@@ -15,4 +15,4 @@
 
 **Luokkakaavio**
 
-![jtn jtn](http://yuml.me/b93f5b5c)
+![jtn jtn](https://github.com/w4ldo/risk/blob/master/dokumentointi/diagram.png)
