@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package riskid.risk.game.domain;
+package riskid.risk.game.sovelluslogiikka;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,31 +11,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import riskid.risk.game.domain.Kartta;
 
 /**
  *
  * @author imatias
  */
-public class PelaajaTest {
-
-    Pelaaja pelaaja;
-
-    public PelaajaTest() {
+public class MapBuilderTest {
+    MapBuilder mb;
+    Kartta map;
+    public MapBuilderTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
-        pelaaja = new Pelaaja("ossi");
+        mb = new MapBuilder();
+        map = mb.buildmap();
     }
-
+    
     @After
     public void tearDown() {
     }
@@ -43,22 +44,12 @@ public class PelaajaTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
+    // @Test
+    // public void hello() {}
     @Test
-    public void konstruktoriAsettaaNimenOikein() {
-    assertEquals("ossi", pelaaja.toString());
+    public void asettaaviereisetOikein() {
+        assertTrue(map.getAlue(1).onkoViereinen(map.getAlue(2)));
+        assertFalse(map.getAlue(1).onkoViereinen(map.getAlue(9)));
+        
     }
-
-    @Test
-    public void reserviinLisaaminenToimii() {
-        pelaaja.lisaaReserviin(5);
-        assertEquals(5, pelaaja.getReservi());
-    }
-    @Test
-    public void reservistaPoistaminenToimii() {
-        pelaaja.lisaaReserviin(5);
-        pelaaja.poistaReservista(5);
-        assertEquals(0, pelaaja.getReservi());
-    }
-//     @Test
-//     public void hello() {}
 }

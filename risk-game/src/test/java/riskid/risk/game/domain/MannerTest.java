@@ -68,4 +68,19 @@ public class MannerTest {
     }
     // @Test
     // public void hello() {}
+    @Test
+    public void onkoBonusToimii() {
+        Pelaaja hallitsija = new Pelaaja("ossi");
+        Pelaaja pelaaja = new Pelaaja("hessu");
+        toka.setHallitsija(hallitsija);
+        eka.setHallitsija(hallitsija);
+        assertTrue(manner.onkoBonus(hallitsija));
+        assertFalse(manner.onkoBonus(pelaaja));
+    }
+    
+    @Test
+    public void getAlueToimii() {
+        assertEquals(eka, manner.getAlue(1));
+        assertEquals(null, manner.getAlue(0));
+    }
 }

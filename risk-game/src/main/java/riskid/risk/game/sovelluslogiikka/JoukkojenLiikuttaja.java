@@ -27,7 +27,8 @@ public class JoukkojenLiikuttaja {
     }
 
     public boolean sijoitaLisajoukkoja(Alue minne, int montako, Pelaaja kenen) {
-        if (minne.getHallitsija().equals(kenen)) {
+
+        if (minne.getHallitsija() != null && minne.getHallitsija().equals(kenen)) {
             minne.getYksikko().setVahvuus(minne.getYksikonVahvuus() + montako);
             kenen.poistaReservista(montako);
             return true;

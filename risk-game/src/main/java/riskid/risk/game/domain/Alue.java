@@ -66,4 +66,15 @@ public class Alue {
         return this.hallitsija.getNimi() + ":" + this.yksikko.getVahvuus();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o.getClass() != this.getClass()) {
+            return false;
+        }
+        Alue alue = (Alue) o;
+        if (alue.getId() != this.getId()) {
+            return false;
+        }
+        return true;
+    }
 }

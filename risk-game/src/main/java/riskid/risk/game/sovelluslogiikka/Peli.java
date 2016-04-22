@@ -1,6 +1,5 @@
 package riskid.risk.game.sovelluslogiikka;
 
-import java.util.Scanner;
 import riskid.risk.game.domain.*;
 import riskid.risk.game.kayttoliittyma.GUI;
 
@@ -25,14 +24,13 @@ public class Peli {
         this.pelaajaB = new Pelaaja("Bravo");
         this.pelaajaAVuoro = true;
         this.onkoVoittajaa = false;
-
         this.lk = new LuvunKysyja(gui);
     }
 
     public void run() {
         gui.setVisible(true);
         gui.teeLisaOsatNakymattomiksi();
-        pelinAlustus();
+        pelinAlustus(57);
         while (!onkoVoittajaa) {
             if (pelaajaAVuoro) {
                 uusiVuoro(pelaajaA);
@@ -40,20 +38,12 @@ public class Peli {
                 uusiVuoro(pelaajaB);
             }
         }
-        gui.paivitaGui(map.tulostaKartta(),
-                pelaajaAVuoro, pelaajaA.getReservi(),
-                pelaajaB.getReservi(),
-                map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
-        if (pelaajaAVuoro) {
-            gui.uusiIlmoitus("gg, Alpha voitti");
-        } else {
-            gui.uusiIlmoitus("gg, Bravo voitti");
-        }
+        kukaVoitti();
     }
 
-    private void pelinAlustus() {
-        pelaajaA.lisaaReserviin(57);
-        pelaajaB.lisaaReserviin(57);
+    private void pelinAlustus(int joukot) {
+        pelaajaA.lisaaReserviin(joukot);
+        pelaajaB.lisaaReserviin(joukot);
         aloitusjoukkojenSijoitus();
         aloitusjoukkojenVahvistus();
     }
@@ -126,7 +116,7 @@ public class Peli {
     }
 
     private void uusiVuoro(Pelaaja pelaaja) {
-        gui.uusiIlmoitus("Sijoita lisäjoukkoja");
+        gui.uusiAlert("Sijoita 3 lisäjoukkoja kerrallaan");
         pelaaja.lisaaReserviin(map.laskePelaajanLisajoukot(pelaaja));
         lisajoukkojenSijoitus(pelaaja, map.laskePelaajanLisajoukot(pelaaja) / 3, 3);
         gui.teeLisaOsatNakyviksi();
@@ -189,6 +179,20 @@ public class Peli {
                     pelaajaAVuoro, pelaajaA.getReservi(),
                     pelaajaB.getReservi(),
                     map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
+        }
+    }
+
+    private void kukaVoitti() {
+        gui.paivitaGui(map.tulostaKartta(),
+                pelaajaAVuoro, pelaajaA.getReservi(),
+                pelaajaB.getReservi(),
+                map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
+        if (pelaajaAVuoro) {
+            gui.uusiAlert("peli päättyi :DD");
+            gui.uusiIlmoitus("gg, Alpha voitti");
+        } else {
+            gui.uusiAlert("peli päättyi :DD");
+            gui.uusiIlmoitus("gg, Bravo voitti");
         }
     }
 

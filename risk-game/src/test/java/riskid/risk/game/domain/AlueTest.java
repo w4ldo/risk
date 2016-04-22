@@ -71,12 +71,37 @@ public class AlueTest {
         alue.setHallitsija(pelaaja);
         assertEquals(pelaaja, alue.getHallitsija());
     }
-    
+
     @Test
     public void getYksikkoPalauttaaYksikon() {
         Yksikko unit = new Yksikko(new Pelaaja("ossi"));
         alue.setYksikko(unit);
         assertEquals(unit, alue.getYksikko());
+    }
+
+    @Test
+    public void onkoViereinenToimii() {
+        alue.setViereiset(toinen);
+        toinen.setViereiset(alue);
+        assertTrue(alue.onkoViereinen(toinen));
+        assertFalse(alue.onkoViereinen(kolmas));
+    }
+
+    @Test
+    public void toStrngToimii() {
+        Pelaaja hallitsija = new Pelaaja("ossi");
+        alue.setHallitsija(hallitsija);
+        alue.setYksikko(new Yksikko(hallitsija));
+        assertEquals("ossi:1", alue.toString());
+        assertEquals("", toinen.toString());
+    }
+
+    @Test
+    public void equalsToimii() {
+        
+        assertFalse(alue.equals(new Pelaaja("ossi")));
+        assertFalse(alue.equals(new Alue(2)));
+        assertTrue(alue.equals(new Alue(1)));
     }
 
 //    @Test
