@@ -1,4 +1,4 @@
-**Aihe:** Risk javalla toteutettuna. Risk on stragtegialautapeli, jossa pelaajat liikuttavat joukkojaan maailmankartalla tavoitteenaan vallata mahdollisimman paljon alueita muilta pelaajilta. Kartta koostuu 6 maanosasta ja 42 alueesta
+**Aihe:** Risk javalla toteutettuna. Risk on stragtegialautapeli, jossa pelaajat liikuttavat joukkojaan maailmankartalla tavoitteenaan lopulta hallita koko karttaa. Kartta koostuu 6 maanosasta ja 42 alueesta
 
 **Käyttäjät:** 2 pelaajaa
 
