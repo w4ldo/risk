@@ -45,18 +45,4 @@ public class Manner {
         return bonus;
     }
 
-    @Override
-    public String toString() {
-        String s = this.nimi + ": ";
-        int i = 0;
-        for (Alue a : this.alueet.values()) {
-            s += a.toString();
-            if (i < this.alueet.size() - 1) {
-                s += ", ";
-            }
-            i++;
-        }
-        return s;
-    }
-
 }

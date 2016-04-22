@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 11,
+      <title>File: 12,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -61,6 +61,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#riskid.risk.game.sovelluslogiikka.MapBuilder.java">riskid/risk/game/sovelluslogiikka/MapBuilder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#riskid.risk.game.kayttoliittyma.GUI.java">riskid/risk/game/kayttoliittyma/GUI.java</a>
                 </td>
                 <td>
                   0
@@ -130,20 +144,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#riskid.risk.game.kayttoliittyma.UI.java">riskid/risk/game/kayttoliittyma/UI.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#riskid.risk.game.domain.Manner.java">riskid/risk/game/domain/Manner.java</a>
                 </td>
                 <td>
@@ -159,6 +159,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#riskid.risk.game.domain.Yksikko.java">riskid/risk/game/domain/Yksikko.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#riskid.risk.game.sovelluslogiikka.LuvunKysyja.java">riskid/risk/game/sovelluslogiikka/LuvunKysyja.java</a>
                 </td>
                 <td>
                   0

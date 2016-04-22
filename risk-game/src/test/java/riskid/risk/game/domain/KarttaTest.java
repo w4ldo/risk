@@ -61,11 +61,7 @@ public class KarttaTest {
         map.put("toinenManner", toinenManner);
         assertEquals(map, kartta.getMantereet());
     }
-    
-    @Test
-    public void toStringToimii() {
-        assertEquals("toinenManner: 3\nmanner: 1, 2", kartta.toString());
-    }
+
     
 //     @Test
 //     public void hello() {}

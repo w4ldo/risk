@@ -92,27 +92,4 @@ public class Kartta {
         return lista;
     }
 
-    public void tulostaViereisetAlueetJaJoukot() {
-        //lähinnä testausta varten
-        for (Manner m : this.mantereet.values()) {
-            for (Alue a : m.getAlueet().values()) {
-                System.out.println(a.getId() + ": " + a.getViereiset() + ", " + a.getYksikko());
-            }
-        }
-    }
-
-    @Override
-    public String toString() {
-        String a = "";
-        int i = 0;
-        for (Manner m : this.mantereet.values()) {
-            a += m.toString();
-            if (i < this.mantereet.size() - 1) {
-                a += "\n";
-            }
-            i++;
-        }
-        return a;
-    }
-
 }

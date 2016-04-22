@@ -60,11 +60,6 @@ public class MannerTest {
     }
     
     @Test
-    public void toStringluetteleeNimenJaAlueet() {
-        assertEquals("manner: 1, 2", manner.toString());
-    }
-    
-    @Test
     public void getAlueetPalauttaaAlueet() {
         Map<Integer, Alue> map = new HashMap<>();
         map.put(1, eka);

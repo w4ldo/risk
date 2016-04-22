@@ -53,7 +53,7 @@ public class AlueTest {
     //
     @Test
     public void konstruktoriAsettaaIdOikein() {
-        assertEquals("1", alue.toString());
+        assertEquals(1, alue.getId());
     }
 
     @Test
