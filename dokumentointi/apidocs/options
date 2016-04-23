@@ -1,0 +1,24 @@
+-classpath
+'/home/imatias/.m2/repository/unknown/binary/AbsoluteLayout/SNAPSHOT/AbsoluteLayout-SNAPSHOT.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/imatias/Downloads/risk/risk-game/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2016. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/imatias/Downloads/risk/risk-game/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'risk-game 1.0-SNAPSHOT API'
+-linkoffline
+'http://docs.oracle.com/javase/8/docs/api' '/home/imatias/Downloads/risk/risk-game/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'risk-game 1.0-SNAPSHOT API'

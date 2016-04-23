@@ -1,7 +1,9 @@
 package riskid.risk.game.domain;
 
 import java.util.*;
-
+/**
+ * Alue kuvaa pelilaudan yksittäistä ruutua.
+ */
 public class Alue {
 
     private Pelaaja hallitsija;

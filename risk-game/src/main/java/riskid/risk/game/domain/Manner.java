@@ -2,6 +2,10 @@ package riskid.risk.game.domain;
 
 import java.util.*;
 
+/**
+ * Manner koostuu useista alueesta. Hallitsemalla kaikkia alueita mantereella
+ * saa mantereen bonuksen verran lisäjoukkoja
+ */
 public class Manner {
 
     private final Map<Integer, Alue> alueet;
@@ -21,6 +25,14 @@ public class Manner {
         return alueet;
     }
 
+    /**
+     * Metodi tarkistaa saako annettu pelaaja bonuksen tästä mantereesta.
+     * i.e. hallitseeko pelaaja koko mannerta.
+     *
+     * @param pelaaja tarkistuksen kohde
+     *
+     * @return true/false
+     */
     public boolean onkoBonus(Pelaaja pelaaja) {
         for (Alue a : this.getAlueet().values()) {
             if (a.getHallitsija() != pelaaja) {

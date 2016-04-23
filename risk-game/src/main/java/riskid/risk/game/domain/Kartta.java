@@ -2,6 +2,9 @@ package riskid.risk.game.domain;
 
 import java.util.*;
 
+/**
+ * Kartta koostuu useista Mantereista. Kartta kuvastaa pelilautaa.
+ */
 public class Kartta {
 
     private final Map<String, Manner> mantereet;
@@ -35,6 +38,11 @@ public class Kartta {
         }
     }
 
+    /**
+     * Metodi tarkistaa onko kartalla alueita, joille ei ole asetettu joukkoja.
+     *
+     * @return true/false
+     */
     public boolean onkoTyhjiaAlueita() {
         int i = 0;
         for (Manner m : this.mantereet.values()) {
@@ -50,6 +58,19 @@ public class Kartta {
         return false;
     }
 
+    /**
+     * Metodi tarkistaa paljonko pelaaja saa lisäjoukkoja vuoron alussa.
+     * tarkistukseen kuuluu pelaajan hallitsemat alueet ja mannerbonukset.
+     *
+     *
+     * @param pelaaja tarkistuksen kohde
+     * @see domain.Manner#onkoBonus(Pelaaja)
+     * @see
+     * riskid.risk.game.domain.Manner#onkoBonus(riskid.risk.game.domain.Pelaaja)
+     * @see
+     * riskid.risk.game.domain.Kartta#laskePelaajanAlueet(riskid.risk.game.domain.Pelaaja)
+     * @return saatavat lisäjoukot
+     */
     public int laskePelaajanLisajoukot(Pelaaja pelaaja) {
         int joukot = 0;
         joukot += laskePelaajanAlueet(pelaaja) / 3;
@@ -63,6 +84,13 @@ public class Kartta {
         return joukot;
     }
 
+    /**
+     * Metodi tarkistaa voittaako kyseinen pelaaja. i.e. hallitseeko kaikkia
+     * alueita kartalla.
+     *
+     * @param pelaaja tarkistuksen kohde
+     * @return true/false
+     */
     public boolean voittaako(Pelaaja pelaaja) {
         for (Manner m : this.mantereet.values()) {
             if (!m.onkoBonus(pelaaja)) {
@@ -72,6 +100,12 @@ public class Kartta {
         return true;
     }
 
+    /**
+     * Metodi laskee pelaajan hallitsemat alueet.
+     *
+     * @param pelaaja tarkistuksen kohde
+     * @return hallitsemien alueiden määrä
+     */
     private int laskePelaajanAlueet(Pelaaja pelaaja) {
         int i = 0;
         for (Manner m : this.mantereet.values()) {
@@ -84,6 +118,11 @@ public class Kartta {
         return i;
     }
 
+    /**
+     * Palauttaa listan joka sisältää kaikkien alueiden toString().
+     *
+     * @return alueet toString
+     */
     public List<String> tulostaKartta() {
         List<String> lista = new ArrayList<>();
         for (int i = 1; i <= 42; i++) {
