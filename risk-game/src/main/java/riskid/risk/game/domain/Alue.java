@@ -1,6 +1,7 @@
 package riskid.risk.game.domain;
 
 import java.util.*;
+
 /**
  * Alue kuvaa pelilaudan yksittäistä ruutua.
  */
@@ -56,6 +57,7 @@ public class Alue {
                 return true;
             }
         } catch (Exception e) {
+            
         }
         return false;
     }

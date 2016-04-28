@@ -550,8 +550,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void lopetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaActionPerformed
         // TODO add your handling code here:
-        tekstiKentta1.setText((syoteKentta1.getText()));
-        tekstiKentta2.setText(syoteKentta2.getText());
+        tekstiKentta1.setText(("999"));
+        tekstiKentta2.setText("999");
         tekstiKentta.setText("999");
         syoteKentta.setText(null);
         syoteKentta1.setText(null);
