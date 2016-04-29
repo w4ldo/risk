@@ -12,6 +12,10 @@
 
 **Voittaminen**
 - Peli jatkuu kunnes yksi pelaajista hallitsee koko lautaa
+ 
+[**Ohjeet**](dokumentointi/ohjeet.md)
+
+[**Rakennekuvaus**](rakennekuvaus/ohjeet.md)
 
 **Luokkakaavio**
 
