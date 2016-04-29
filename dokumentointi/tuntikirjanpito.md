@@ -16,5 +16,9 @@ Päivä | Tunnit | Kuvaus
 15.04.2016 | 3h | sovelluslogiikkaa,
 18.04.2016 | 6h | peli luokka
 19.04.2016 | 3h | lisäyksii etc
-
-
+20.04.2016 | 1000h | ms.paintis
+21.04.2016 | 2h | käyttöliittymäluokan aloitus
+22.04.2016 | 7h | käyttöliittymäluokkaa + javadoc + logiikkaa
+25.04.2016 | 1h | gui hifistelyy
+28.04.2016 | 3h | javadoccii, testei
+29.04.2016 | 6h | viimeistelyy, korjauksii, javadoccii, jar, kaavioit
