@@ -16,3 +16,11 @@
 **Luokkakaavio**
 
 ![jtn jtn](https://github.com/w4ldo/risk/blob/master/dokumentointi/newdiagram.png)
+
+**Sekvenssikaavi: Aloitusjoukkojen Sijoitus**
+
+![jtn jtn](https://github.com/w4ldo/risk/blob/master/dokumentointi/aloitusjoukkojenSijoitus.png)
+
+**Sekvenssikaavi: Hyökkaysvaihe**
+
+![jtn jtn](https://github.com/w4ldo/risk/blob/master/dokumentointi/hyokkaysVaihe.png)
