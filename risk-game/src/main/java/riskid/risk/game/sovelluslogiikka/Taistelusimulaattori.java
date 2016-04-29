@@ -3,16 +3,28 @@ package riskid.risk.game.sovelluslogiikka;
 import java.util.*;
 import riskid.risk.game.domain.*;
 
+/**
+ * Luokka joka arpoo taistelun lopputuloksen.
+ */
 public class Taistelusimulaattori {
 
     private Random random;
 
+    /**
+     * Luokan konstruktori.
+     */
     public Taistelusimulaattori() {
         this.random = new Random();
     }
 
-    //hyökkääjä heittää 1-3 nopppaa, puolustaja 1-2 noppaa.
-    //puolustaja voittaa tasapelit, noppia heitetään kunnes toinen armeija on tuhottu
+    /**
+     * Hyökkääjä heittää 1-3 nopppaa, puolustaja 1-2 noppaa. Puolustaja voittaa
+     * tasapelit, noppia heitetään kunnes toinen armeija on tuhottu
+     *
+     * @param mista mista hyökätään
+     * @param mihin mihin hyökätään
+     * @param montako montako hyökkääjää
+     */
     public void taistele(Alue mista, Alue mihin, int montako) {
         int hyokkaaja = montako;
         int puolustaja = mihin.getYksikonVahvuus();

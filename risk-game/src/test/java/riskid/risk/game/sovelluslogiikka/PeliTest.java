@@ -11,14 +11,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import riskid.risk.game.kayttoliittyma.GUI;
 
 /**
  *
  * @author imatias
  */
 public class PeliTest {
-    
+    private Peli risk;
+    private GUI gui;
     public PeliTest() {
+        
     }
     
     @BeforeClass
@@ -31,6 +34,8 @@ public class PeliTest {
     
     @Before
     public void setUp() {
+    gui = new GUI();
+    risk = new Peli(gui);
     }
     
     @After

@@ -20,6 +20,7 @@ import riskid.risk.game.kayttoliittyma.GUI;
 public class LuvunKysyjaTest {
 
     private LuvunKysyja lk;
+    private GUI gui;
 
     public LuvunKysyjaTest() {
     }
@@ -34,7 +35,7 @@ public class LuvunKysyjaTest {
 
     @Before
     public void setUp() {
-        GUI gui = new GUI();
+        gui = new GUI();
         lk = new LuvunKysyja(gui);
     }
 
@@ -54,5 +55,27 @@ public class LuvunKysyjaTest {
         }
         assertFalse(lk.onkoLukuSallittu(0));
         assertFalse(lk.onkoLukuSallittu(43));
+        assertFalse(lk.onkoLukuSallittu(999));
+    }
+    @Test
+    public void kysyLukuaToimii() {
+        gui.setTekstiKentta("asd", null, null);
+        assertEquals(0, lk.kysyLukua());
+        gui.setTekstiKentta("1", null, null);
+        assertEquals(1, lk.kysyLukua());
+    }
+    @Test
+    public void mihinSiirretaanToimii() {
+        gui.setTekstiKentta(null, "asd", null);
+        assertEquals(0, lk.mihinSiirretaan());
+        gui.setTekstiKentta(null, "1", null);
+        assertEquals(1, lk.mihinSiirretaan());
+    }
+    @Test
+    public void mistaSiirretaanToimii() {
+        gui.setTekstiKentta(null, null, "asd");
+        assertEquals(0, lk.montakoSiirretaan());
+        gui.setTekstiKentta(null, null, "1");
+        assertEquals(1, lk.montakoSiirretaan());
     }
 }

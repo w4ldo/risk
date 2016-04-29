@@ -3,6 +3,9 @@ package riskid.risk.game.sovelluslogiikka;
 import riskid.risk.game.domain.*;
 import riskid.risk.game.kayttoliittyma.GUI;
 
+/**
+ * Luokka joka toteuttaa pelin kulun.
+ */
 public class Peli {
 
     private MapBuilder mb;
@@ -15,8 +18,13 @@ public class Peli {
     private boolean onkoVoittajaa;
     private GUI gui;
 
-    public Peli() {
-        this.gui = new GUI();
+    /**
+     * Peli-luokan konstruktori.
+     *
+     * @param gui gui
+     */
+    public Peli(GUI gui) {
+        this.gui = gui;
         this.mb = new MapBuilder();
         this.jl = new JoukkojenLiikuttaja(gui);
         this.map = mb.buildmap();
@@ -27,6 +35,9 @@ public class Peli {
         this.lk = new LuvunKysyja(gui);
     }
 
+    /**
+     * Metodi joka käynnistää pelin.
+     */
     public void run() {
         gui.setVisible(true);
         gui.teeLisaOsatNakymattomiksi();
@@ -67,9 +78,7 @@ public class Peli {
                 gui.uusiIlmoitus("");
                 pelaajaAVuoro = !pelaajaAVuoro;
             }
-            gui.paivitaGui(map.tulostaKartta(),
-                    pelaajaAVuoro, pelaajaA.getReservi(),
-                    pelaajaB.getReservi(),
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi(),
                     map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
@@ -87,9 +96,7 @@ public class Peli {
                 gui.uusiIlmoitus("");
                 pelaajaAVuoro = !pelaajaAVuoro;
             }
-            gui.paivitaGui(map.tulostaKartta(),
-                    pelaajaAVuoro, pelaajaA.getReservi(),
-                    pelaajaB.getReservi(),
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi(),
                     map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
@@ -108,9 +115,7 @@ public class Peli {
                 }
                 i++;
             }
-            gui.paivitaGui(map.tulostaKartta(),
-                    pelaajaAVuoro, pelaajaA.getReservi(),
-                    pelaajaB.getReservi(),
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi(),
                     map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
@@ -146,9 +151,7 @@ public class Peli {
                     break;
                 }
             }
-            gui.paivitaGui(map.tulostaKartta(),
-                    pelaajaAVuoro, pelaajaA.getReservi(),
-                    pelaajaB.getReservi(),
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi(),
                     map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
@@ -175,17 +178,13 @@ public class Peli {
                     continue;
                 }
             }
-            gui.paivitaGui(map.tulostaKartta(),
-                    pelaajaAVuoro, pelaajaA.getReservi(),
-                    pelaajaB.getReservi(),
+            gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi(),
                     map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         }
     }
 
     private void kukaVoitti() {
-        gui.paivitaGui(map.tulostaKartta(),
-                pelaajaAVuoro, pelaajaA.getReservi(),
-                pelaajaB.getReservi(),
+        gui.paivitaGui(map.tulostaKartta(), pelaajaAVuoro, pelaajaA.getReservi(), pelaajaB.getReservi(),
                 map.laskePelaajanLisajoukot(pelaajaA), map.laskePelaajanLisajoukot(pelaajaB));
         if (pelaajaAVuoro) {
             gui.uusiAlert("peli päättyi :DD");

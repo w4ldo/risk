@@ -2,14 +2,27 @@ package riskid.risk.game.sovelluslogiikka;
 
 import riskid.risk.game.kayttoliittyma.GUI;
 
+/**
+ * LuvunKysyja lukee käyttäjän syötteet.
+ */
 public class LuvunKysyja {
 
     private GUI gui;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param gui gui
+     */
     public LuvunKysyja(GUI gui) {
         this.gui = gui;
     }
 
+    /**
+     * Lukee syötteen ensimmäisestä tekstikentästä.
+     *
+     * @return int luku
+     */
     public int kysyLukua() {
         int luku = 0;
         try {
@@ -21,6 +34,12 @@ public class LuvunKysyja {
         return luku;
     }
 
+    /**
+     * Palauttaa true jos luku on sallittu.
+     *
+     * @param luku kysytty luku
+     * @return true/false
+     */
     public boolean onkoLukuSallittu(int luku) {
         if (luku > 0 && luku < 43) {
             return true;
@@ -31,6 +50,11 @@ public class LuvunKysyja {
         return false;
     }
 
+    /**
+     * Lukee syötteen toisesta tekstikentästä.
+     *
+     * @return int luku
+     */
     public int mihinSiirretaan() {
         int mihin = 0;
         try {
@@ -42,6 +66,11 @@ public class LuvunKysyja {
         return mihin;
     }
 
+    /**
+     * Lukee syötteen kolmannesta tekstikentästä.
+     *
+     * @return int luku
+     */
     public int montakoSiirretaan() {
         int monellako = 0;
         try {

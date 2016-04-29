@@ -565,6 +565,12 @@ public class GUI extends javax.swing.JFrame {
     public void uusiAlert(String teksti) {
         this.alerts.setText(teksti);
     }
+    
+    public void setTekstiKentta(String teksti, String toinen, String kolmas) {
+        tekstiKentta2.setText(kolmas);
+        tekstiKentta1.setText(toinen);
+        tekstiKentta.setText(teksti);
+    }
 
     public String getTekstiKentta(int luku) {
         if (luku == 1) {

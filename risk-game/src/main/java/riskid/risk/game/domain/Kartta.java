@@ -9,6 +9,11 @@ public class Kartta {
 
     private final Map<String, Manner> mantereet;
 
+    /**
+     * Kartan konstruktori saa parametreina mantereet.
+     *
+     * @param manner kartan mantereet
+     */
     public Kartta(Manner... manner) {
         this.mantereet = new HashMap<>();
         for (Manner m : manner) {
@@ -20,6 +25,12 @@ public class Kartta {
         return mantereet;
     }
 
+    /**
+     * Paluttaa haetun alueen. Palauttaa null, jos aluetta ei löydy.
+     *
+     * @param i haetun alueen id
+     * @return haettu alue
+     */
     public Alue getAlue(int i) {
         if (i >= 1 && i <= 9) {
             return this.mantereet.get("P-Amerikka").getAlue(i);
@@ -100,12 +111,6 @@ public class Kartta {
         return true;
     }
 
-    /**
-     * Metodi laskee pelaajan hallitsemat alueet.
-     *
-     * @param pelaaja tarkistuksen kohde
-     * @return hallitsemien alueiden määrä
-     */
     private int laskePelaajanAlueet(Pelaaja pelaaja) {
         int i = 0;
         for (Manner m : this.mantereet.values()) {

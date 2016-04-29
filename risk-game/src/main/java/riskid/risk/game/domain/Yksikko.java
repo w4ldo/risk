@@ -1,10 +1,18 @@
 package riskid.risk.game.domain;
 
+/**
+ * Yksikko kuvaa yhdessä ruudussa sijaitsevia joukkoja.
+ */
 public class Yksikko {
 
     private int vahvuus;
     private final Pelaaja pelaaja;
 
+    /**
+     * Yksikko-luokan konstruktori.
+     *
+     * @param pelaaja yksikköä komentava pelaaja
+     */
     public Yksikko(Pelaaja pelaaja) {
         this.vahvuus = 1;
         this.pelaaja = pelaaja;

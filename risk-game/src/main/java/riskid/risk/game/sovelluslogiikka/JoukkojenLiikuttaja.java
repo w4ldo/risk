@@ -3,16 +3,32 @@ package riskid.risk.game.sovelluslogiikka;
 import riskid.risk.game.domain.*;
 import riskid.risk.game.kayttoliittyma.GUI;
 
+/**
+ * JoukkojenLiikuttaja tekee joukkojen siirtämiseen vaadittavia toimenpiteitä.
+ */
 public class JoukkojenLiikuttaja {
 
     private Taistelusimulaattori ts;
     private GUI gui;
 
+    /**
+     * Luokan konstruktori.
+     *
+     * @param gui gui
+     */
     public JoukkojenLiikuttaja(GUI gui) {
         this.ts = new Taistelusimulaattori();
         this.gui = gui;
     }
 
+    /**
+     * Metodi joukkojen sijoittamiselle tyhjään ruutuun. Palauttaa true jos
+     * operaatio onnistuu.
+     *
+     * @param minne haluttu alue
+     * @param kenen yksikön pelaaja
+     * @return true/false
+     */
     public boolean sijoitaAloitusJoukkoja(Alue minne, Pelaaja kenen) {
         if (minne.getYksikko() == null) {
             minne.setYksikko(new Yksikko(kenen));
@@ -26,6 +42,15 @@ public class JoukkojenLiikuttaja {
         return false;
     }
 
+    /**
+     * Metodi lisäjoukkojen sijoittamiselle hallittuun ruutuun. Palauttaa true
+     * jos operaatio onnistuu.
+     *
+     * @param minne haluttu alue
+     * @param montako sijoitettava määrä
+     * @param kenen yksikön pelaaja
+     * @return true/false
+     */
     public boolean sijoitaLisajoukkoja(Alue minne, int montako, Pelaaja kenen) {
 
         if (minne.getHallitsija() != null && minne.getHallitsija().equals(kenen)) {
@@ -38,6 +63,14 @@ public class JoukkojenLiikuttaja {
         return false;
     }
 
+    /**
+     * Metodi joukkojen siirtämiselle vihollisen hallitsemaan ruutuun.
+     *
+     * @param mista mistä hyökätään
+     * @param mihin haluttu alue
+     * @param montako hyökkääjien vahvuus
+     *
+     */
     public void hyokkaaTaiValtaa(Alue mista, Alue mihin, int montako) {
         if (mista.onkoViereinen(mihin)) {
             if (montako >= 1 && montako < mista.getYksikko().getVahvuus()) {
@@ -55,6 +88,15 @@ public class JoukkojenLiikuttaja {
         }
     }
 
+    /**
+     * Metodi joukkojen sijoittamiselle omaan ruutuun. Palauttaa true jos
+     * operaatio onnistuu.
+     *
+     * @param mista mistä siirretän
+     * @param mihin mihin ruutuun
+     * @param montako haluttu määrä
+     * @return true/false
+     */
     public boolean passiivinenLiike(Alue mista, Alue mihin, int montako) {
         if (mista.onkoViereinen(mihin)) {
             if (montako >= 1 && montako < mista.getYksikko().getVahvuus()) {

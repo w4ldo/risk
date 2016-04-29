@@ -4,13 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import riskid.risk.game.domain.*;
 
+/**
+ * Luokka joka rakentaa pelilaudan.
+ */
 public class MapBuilder {
 
+    /**
+     * Konstruktori.
+     */
     public MapBuilder() {
         //tämä luokka rakentaa pelilaudan. Lauta on staattinen 42 aluetta, 6 mannerta
         //tästä syystä esim alueiden viereisyydet ja mantereiden rakenteet on kovakoodattu metodiin
     }
 
+    /**
+     * Rakentaa ennalta määritellyn kartan.
+     *
+     * @return valmiin kartan
+     */
     public Kartta buildmap() {
         List<Alue> alueet = this.buildAlueet();
         this.asetaViereiset(alueet);

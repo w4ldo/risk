@@ -12,6 +12,15 @@ public class Manner {
     private final String nimi;
     private final int bonus;
 
+    /**
+     * Manner-luokan konstruktori. Saa parametreina mantereen bonuksen, nimi ja
+     * alueet.
+     *
+     * @param bonus mannner-bonus
+     * @param nimi nimi
+     * @param alue alueet
+     *
+     */
     public Manner(int bonus, String nimi, Alue... alue) {
         this.nimi = nimi;
         this.bonus = bonus;
@@ -26,8 +35,8 @@ public class Manner {
     }
 
     /**
-     * Metodi tarkistaa saako annettu pelaaja bonuksen tästä mantereesta.
-     * i.e. hallitseeko pelaaja koko mannerta.
+     * Metodi tarkistaa saako annettu pelaaja bonuksen tästä mantereesta. i.e.
+     * hallitseeko pelaaja koko mannerta.
      *
      * @param pelaaja tarkistuksen kohde
      *
@@ -42,6 +51,12 @@ public class Manner {
         return true;
     }
 
+    /**
+     * Paluttaa haetun alueen. Palauttaa null, jos aluetta ei löydy.
+     *
+     * @param i haetun alueen id
+     * @return haettu alue
+     */
     public Alue getAlue(int i) {
         if (this.alueet.containsKey(i)) {
             return this.alueet.get(i);
