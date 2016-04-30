@@ -5,7 +5,7 @@ vuoropohjainen strategialautapeli
 Pelaajat : 2
 
 **Aloitusjoukkojen sijoitus**
-Peli alkaa aloitusjoukkojen sijoittamisella kartalle. Pelaajat sijoittavat yhden joukon tyhjään ruutuun vuorotelleen, kunnes kartalla ei ole enää tyhjiä ruutuja. Sijoittaminen tapahtuu kirjoittamalla haluttu ruutu (1-42) tekstikenttään ja painamalla "ok"
+Peli alkaa aloitusjoukkojen sijoittamisella kartalle. Pelaajat sijoittavat yhden joukon tyhjään ruutuun vuorotellen, kunnes kartalla ei ole enää tyhjiä ruutuja. Sijoittaminen tapahtuu kirjoittamalla haluttu ruutu (1-42) tekstikenttään ja painamalla "ok"
 
 **Aloitusjoukkojen vahvistus**
 Pelaajat lisäävät vuorotellen 2x2 yksikköä hallitsemilleen alueille, kunnes kummallakaan ei ole enää joukkoja reservissä.
