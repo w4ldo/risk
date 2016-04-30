@@ -18,7 +18,7 @@ Vuorossa oleva pelaaja saa lisäjoukkoja hallitsemiensa alueiden osoittaman mä�
 
 *hyökkäysvaihe:*
 
-Pelaaja suorittaa hyökkäyksiä vihollisen alueille hallitsemiltaan viereisiltä alueilta. Hyökätessä täytyy jättää vähintään 1 yksikkö taakse omalle alueelleen. Hyökkäysten määrää ei raijoiteta. Joukkojen siirtäminen tapahtuu kirjoittamalla kolmeen tekstikenttään tiedot mistä liikutaan, mihin liikutaan ja montako liikutetaan, sekä painamalla "ok". Hyökkäysvaihe päättyy painamalla "lopeta".
+Pelaaja suorittaa hyökkäyksiä vihollisen alueille hallitsemiltaan viereisiltä alueilta. Hyökätessä täytyy jättää vähintään 1 yksikkö taakse omalle alueelleen. Hyökkäysten määrää ei rajoiteta. Joukkojen siirtäminen tapahtuu kirjoittamalla kolmeen tekstikenttään tiedot mistä liikutaan, mihin liikutaan ja montako liikutetaan, sekä painamalla "ok". Hyökkäysvaihe päättyy painamalla "lopeta".
 
 *vahvistusvaihe:*
 
