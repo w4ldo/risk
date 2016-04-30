@@ -22,3 +22,4 @@ Päivä | Tunnit | Kuvaus
 25.04.2016 | 1h | gui hifistelyy
 28.04.2016 | 3h | javadoccii, testei
 29.04.2016 | 6h | viimeistelyy, korjauksii, javadoccii, jar, kaavioit
+30.04.2016 | 1h | ohjeet ja rakennekuvaus
